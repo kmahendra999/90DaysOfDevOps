@@ -42,20 +42,26 @@ Task: What is the linux command to
 
 To view what's written in a file.
 cat filename
+
 To change the access permissions of files.
 chmod 777 foldername
+
 To check which commands you have run till now.
 history
+
 To remove a directory/ Folder.
 rm filename
+
 To create a fruits.txt file and to view the content.
 echo "testststsetst" >> fruits.txt
 cat fruits.txt
+
 Add content in devops.txt (One in each line) - Apple, Mango, Banana, Cherry, Kiwi, Orange, Guava.
 echo -e "Apple\nMango\nBanana\nCherry\nKiwi\nOrange\nGuava" > devops.txt
 
 To Show only top three fruits from the file.
 head -n 3 fruits.txt
+
 To Show only bottom three fruits from the file.
 tail -n 3 fruits.txt
 
