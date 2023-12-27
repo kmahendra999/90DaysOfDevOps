@@ -102,8 +102,8 @@ To set your Git username and email address for commits:
 
 bash
 Copy code
-''git config --global user.name "Your Name"''
-''git config --global user.email "your.email@example.com"''
+'''git config --global user.name "Your Name"'''
+'''git config --global user.email "your.email@example.com"'''
 Replace "Your Name" with your actual name and "your.email@example.com" with your actual email address. This configuration is applied globally, meaning it will be used for all your Git repositories on the current machine.
 
 
