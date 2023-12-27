@@ -20,7 +20,7 @@ In summary, Git is crucial for efficient and collaborative software development,
 
 
 
-
+************************************
 
 
 2) What is difference Between Main Branch and Master Branch??
@@ -34,7 +34,7 @@ Main Branch: In recent years, there has been a shift towards using "main" instea
 In summary, both "main" and "master" branches represent the primary branch of a Git repository where the main development work occurs. The choice between them is largely a matter of naming preference, and both are widely used in practice.
 
 
-
+************************************
 
 
 
@@ -46,7 +46,7 @@ GitHub: GitHub, on the other hand, is a web-based platform that uses Git for ver
 In essence, Git is the version control system itself, while GitHub is a hosting service and platform built around Git to enhance collaboration and provide additional tools for developers.
 
 
-
+************************************
 
 
 4) How do you create a new repository on GitHub?
@@ -65,7 +65,7 @@ Create Repository: Click the "Create repository" button.
 Your new repository is now created on GitHub! You can then clone the repository to your local machine, add files, and use Git commands to manage version control.
 
 
-
+************************************
 
 
 
@@ -90,7 +90,7 @@ Now, your local and remote repositories are connected, allowing you to synchroni
 
 
 
-
+************************************
 
 
 
