@@ -121,6 +121,43 @@ task-2:
 - Create a new file in Devops/Git/Day-02.txt & add some content to it
 - Push your local commits to the repository on GitHub
 
+Sure, here are the steps for the tasks:
+
+Create a Repository on GitHub:
+
+Go to GitHub and create a new repository named "Devops."
+Connect Local Repository to GitHub:
+
+Open your terminal/command prompt and navigate to your local project folder.
+Use the following commands:
+bash
+<code>
+git init
+git remote add origin https://github.com/your-username/Devops.git
+</code>
+Create and Add Content to a New File:
+
+Create a new file: Devops/Git/Day-02.txt
+Add content to the file.
+Commit and Push to GitHub:
+
+In the terminal, run the following commands:
+bash
+<code>
+git add .
+git commit -m "Add Day-02.txt file"
+git push -u origin main
+</code>
+Replace "main" with your branch name if different.
+Now, your local changes are pushed to the "Devops" repository on GitHub.
+
+
+
+
+
+
+
+
 reff :- https://youtu.be/AT1uxOLsCdk
 
 
