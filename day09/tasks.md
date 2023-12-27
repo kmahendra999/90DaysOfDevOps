@@ -77,15 +77,18 @@ Create a Remote Repository:
 On GitHub, create a new repository.
 Initialize Git Locally:
 
-On your local machine, navigate to your project folder using the command line.
-Run git init to initialize a Git repository locally.
+ - On your local machine, navigate to your project folder using the command line.
+ - Run git init to initialize a Git repository locally.
+
 Link Local to Remote:
 
-Use the command: git remote add origin <remote-repository-url>
-This connects your local repository to the remote one on GitHub.
-Push Changes:
+
+ - Use the command: git remote add origin <remote-repository-url>
+ - This connects your local repository to the remote one on GitHub.
+ - Push Changes:
 
 Make changes locally, commit them (git commit), and then push them to the remote repository using git push origin main (replace "main" with your branch name).
+
 Now, your local and remote repositories are connected, allowing you to synchronize changes between them.
 
 
@@ -101,13 +104,14 @@ task-1:
 To set your Git username and email address for commits:
 
 bash
-Copy code
-'''git config --global user.name "Your Name"'''
-'''git config --global user.email "your.email@example.com"'''
-Replace "Your Name" with your actual name and "your.email@example.com" with your actual email address. This configuration is applied globally, meaning it will be used for all your Git repositories on the current machine.
+
+ - <code>git config --global user.name "Your Name</code>
+ - <code>git config --global user.email "your.email@example.com"</code>
+
+ - Replace "Your Name" with your actual name and "your.email@example.com" with your actual email address. This configuration is applied globally, meaning it will be used for all your Git repositories on the current machine.
 
 
-
+************************************
 
 
 
