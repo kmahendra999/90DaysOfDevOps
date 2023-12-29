@@ -105,8 +105,8 @@ To set your Git username and email address for commits:
 
 bash
 
- - <code>git config --global user.name "Your Name</code>
- - <code>git config --global user.email "your.email@example.com"</code>
+ - <code>git config --global user.name "Mahendra Kumar"</code>
+ - <code>git config --global user.email "user@domain.com"</code>
 
  - Replace "Your Name" with your actual name and "your.email@example.com" with your actual email address. This configuration is applied globally, meaning it will be used for all your Git repositories on the current machine.
 
@@ -133,7 +133,7 @@ Use the following commands:
 bash
 <code>
 git init
-git remote add origin https://github.com/your-username/Devops.git
+git remote add origin https://github.com/kmahendra999/90DaysOfDevOps.git
 </code>
 Create and Add Content to a New File:
 
