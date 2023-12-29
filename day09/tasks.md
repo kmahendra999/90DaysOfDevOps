@@ -2,6 +2,7 @@
 
 ## Find the answers by your understandings(Shoulden't be copied by internet & used hand-made diagrams)  of below quistions and Write blog on it.
 1) What is Git and why is it important?
+   
 Git is a distributed version control system used for tracking changes in source code during software development. It allows multiple developers to collaborate on a project simultaneously. Git is important because it:
 
 Tracks Changes: Git keeps a record of changes made to source code, enabling developers to revert to previous versions if needed.
