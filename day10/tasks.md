@@ -131,6 +131,10 @@ resolve in file mannually.
  - add some changes to `dev` branch and merge that branch in `master`
  - as a practice try git rebase too, see what difference you get.
 
+***
+<code>git log</code>
+
+***
 
 ## Note: 
 We should learn and follow the [best practices](https://www.flagship.io/git-branching-strategies/) , industry follows for branching.
