@@ -5,16 +5,16 @@ Git stash is a command that allows you to temporarily save changes you have made
 
 To use Git stash, you first create a new branch and make some changes to it. Then you can use the command git stash to save those changes. This will remove the changes from your working directory and record them in a new stash. You can apply these changes later. <code>git stash list</code> command shows the list of stashed changes.
 
-You can also use <code>git stash drop</code> to delete a stash and git stash clear to delete all the stashes.
+You can also use <code>git stash drop</code> to delete a stash and <code>git stash clear</code> to delete all the stashes.
 
 ## Cherry-pick:
 Git cherry-pick is a command that allows you to select specific commits from one branch and apply them to another. This can be useful when you want to selectively apply changes that were made in one branch to another.
 
-To use git cherry-pick, you first create two new branches and make some commits to them. Then you use git cherry-pick <commit_hash> command to select the specific commits from one branch and apply them to the other.
+To use git cherry-pick, you first create two new branches and make some commits to them. Then you use <code>git cherry-pick <commit_hash></code> command to select the specific commits from one branch and apply them to the other.
 
 ## Resolving Conflicts:
 Conflicts can occur when you merge or rebase branches that have diverged, and you need to manually resolve the conflicts before git can proceed with the merge/rebase.
-git status command shows the files that have conflicts, git diff command shows the difference between the conflicting versions and git add command is used to add the resolved files.
+<code>git status</code> command shows the files that have conflicts, <code>git diff</code> command shows the difference between the conflicting versions and git add command is used to add the resolved files.
 
 
 # Task-01 
