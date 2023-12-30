@@ -110,6 +110,21 @@ then we will create and change our branch to dev
  Restore the file to a previous version where the content should be “This is the bug fix in development branch”
  [Hint use git revert or reset according to your knowledge]
 
+***
+<code>git log</code>
+
+<code>git revert 532ce58e</code>
+
+there may be conflicts.
+
+resolve in file mannually.
+
+<code>git add .</code>
+
+<code>git revert --continue</code>
+
+***
+
 ## Task 2:
 
  - Demonstrate the concept of branches with 2 or more branches with screenshot.
