@@ -29,20 +29,83 @@
  swithch to `dev` branch ( Make sure your commit message will reflect as "Added new feature").
  [Hint use your knowledge of creating branches and Git commit command]
 
+****
+At First we will create new Repository with name DevOps in our github.
+
+Then in our local computer we will go to a folder and open git bash/cli.
+
+<code>git init</code>
+
+<code>git pull https://github.com/kmahendra999/DevOps.git</code>
+
+<code>mkdir -p ./Devops/Git</code>
+
+<code>echo "This is first feature of our application" > ./Devops/Git/version01.txt</code>
+
+then we will create and change our branch to dev
+
+<code>git checkout -b dev </code>
+
+****
+
+
  - version01.txt should reflect at local repo first followed by Remote repo for review.
  [Hint use your knowledge of Git push and git pull commands here] 
+
+***
+<code>git remote add origin https://github.com/kmahendra999/Devops.git</code>
+
+<code>git add .</code>
+
+<code>git commit -m "My initial commit"</code>
+
+<code>git push https://github.com/kmahendra999/DevOps.git</code>
+
+***
 
  Add new commit in `dev` branch after adding below mentioned content in Devops/Git/version01.txt:
  While writing the file make sure you write these lines
  
  - 1st line>>  This is the bug fix in development branch
  - Commit this with message “ Added feature2 in development branch”
+***
+<code>echo "This is the bug fix in development branch" > ./Devops/Git/version01.txt</code>
+
+<code>git add .</code>
+
+<code>git commit -m "Added feature2 in development branch"</code>
+
+<code>git push https://github.com/kmahendra999/DevOps.git</code>
+
+***
  
  - 2nd line>> This is gadbad code
  - Commit this with message “ Added feature3 in development branch
+
+***
+<code>echo "This is gadbad code" >> ./Devops/Git/version01.txt</code>
+
+<code>git add .</code>
+
+<code>git commit -m "Added feature3 in development branch"</code>
+
+<code>git push https://github.com/kmahendra999/DevOps.git</code>
+
+***
  
  - 3rd line>> This feature will gadbad everything from now.
  - Commit with message “ Added feature4 in development branch
+
+***
+<code>echo "This is gadbad code" >> ./Devops/Git/version01.txt</code>
+
+<code>git add .</code>
+
+<code>git commit -m "Added feature4 in development branch"</code>
+
+<code>git push https://github.com/kmahendra999/DevOps.git</code>
+
+***
 
  Restore the file to a previous version where the content should be “This is the bug fix in development branch”
  [Hint use git revert or reset according to your knowledge]
