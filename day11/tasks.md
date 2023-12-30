@@ -5,7 +5,7 @@ Git stash is a command that allows you to temporarily save changes you have made
 
 To use Git stash, you first create a new branch and make some changes to it. Then you can use the command git stash to save those changes. This will remove the changes from your working directory and record them in a new stash. You can apply these changes later. <code>git stash list</code> command shows the list of stashed changes.
 
-You can also use git stash drop to delete a stash and git stash clear to delete all the stashes.
+You can also use <code>git stash drop</code> to delete a stash and git stash clear to delete all the stashes.
 
 ## Cherry-pick:
 Git cherry-pick is a command that allows you to select specific commits from one branch and apply them to another. This can be useful when you want to selectively apply changes that were made in one branch to another.
