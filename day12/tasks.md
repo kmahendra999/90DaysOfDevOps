@@ -197,12 +197,16 @@ open ssms
 login
 
 CTRL + N for new query
+*******************************
+## QUERIES
+
+CREATE DATABASE db_name1;
+DROP DATABASE db_name1;
 
 CREATE DATABASE db_name1;
 
 USE db_name1;
 
-USE db_name1;
 CREATE TABLE student1(
 id INT PRIMARY KEY,
 name VARCHAR NOT NULL,
