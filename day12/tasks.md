@@ -18,6 +18,13 @@ Post it on Linkedin and Spread the knowledge.😃
 systemctl enable --now mariadb
 systemctl status mariadb
 netstat -tulpn | grep mysqld
+firewall-cmd --permanent --add-port=3306/tcp
+firewall-cmd --reload
+****
+SSH KE CASE ME PORT DEFAULT PUBLICH HOTA HE CHECK KE LIYE : firewall-cmd --get-defaults-zone
+abhi firewall me kya allowed he check ke liye
+vim /etc/firewalld/zones/public.xml
+****
 mysql -u root -p
 -p for password prompt
 Enter if you have seted else hit enter
@@ -32,6 +39,77 @@ Set options according to you.
 SHOW DATABASES;
 
 CREATE DATABASE db_name;
+use db_name;
+SHOW TABLES;
+DESCRIBE TABLE_NAME;
+
+SELECT * FROM TABLE_NAME WHERE column=value;
+
+************
+user creation in databse servers.
+
+mysql -u root -p
+CREATE USER gaurav@'localhost' identified by 'redhat';
+localhost can be % also for all host allowd for login.
+
+SELECT User, Host from user;
+
+***************
+Giving permission to users for see tables.
+
+mysql -u root -p
+grant all on TABLE_NAME.* to gaurav@localhost;
+all = all permisiion 
+* = all columns
+
+**************
+removing user permission
+revoke all on mysql.user from gaurav@localhost;
+
+*************
+Removing user
+
+DROP USER 'gaurav'@localhost
+
+
+******************
+BACK UP
+mysqldump -u root -p DB_NAME > /tmp/abc.dump
+
+cat / vim /tmp/abc.dump
+
+
+mysqldump -u root -p --all-databases > /tmp/abdc.dump
+******************
+RESTORE
+mysql -u root -p DB_name1 < /tmp/abc.dump
+
+search on google
+mariadb configuraion options
+vim /etc/my.cnf.d/mariadb-server.cnf
+vim /etc/my.cnf.d/mariadb-client.cnf
+systemctl restart mariadb
+
+databsae ka data directory
+/var/lib/mysql/
+
+logs ka direcoty
+ls -l /var/log/mariadb/mariadb.log
+
+
+DB SERVER KA PHYSICAL BACKUP
+db server /var/lib/mysql ko kisi dive pe mount karwa kar like /datadrive and us drive ka lvm snapshot liya.
+and ab hum us snapshot se mysqldump command se bankup lenge to db server par load nahi rahega.
+
+DB SERVER KA LOGICAL BACKUP my sql dump command se lena.
+
+HOT BACKUP --- MACHINE CHAL RAHI HE AND RUN TIME PAR BACKUP LIYA
+COLD BACKUP --- SERVER KO BAND KARKE BACKUP LENA
+
+
+
+
+
 </pre>
 
 
