@@ -53,3 +53,42 @@ ALTER TABLE student ADD gender TEXT;
 
 ALTER TABLE student DROP COLUMN gender;
 
+## CONSTRAINTS :
+![image](https://github.com/kmahendra999/90DaysOfDevOps/assets/9668316/6c5ce741-66c1-4f62-9d4a-65efad6fb7c5)
+
+### Here NOT NULL IS CONSTRAINT
+
+<pre>
+CREATE TABLE Colleges (
+  college_id INT NOT NULL,
+  college_code VARCHAR(20) NOT NULL,
+  college_name VARCHAR(50)
+);
+</pre>
+
+ALTER TABLE Colleges ALTER COLUMN college_name VARCHAR(50) NOT NULL;
+
+ALTER TABLE DROP CONSTRAINT QUERY......issue
+ALTER TABLE Colleges ALTER COLUMN college_name DROP NOT NULL;
+
+##### IN MS SQL
+USE db_name1;
+EXEC sp_rename 'student', 'mystudents';
+
+#### IN my sql
+USE db_name1;
+ALTER TABLE student RENAME TO mystudents;
+
+#### RENAME in SQL
+USE db_name1;
+EXEC sp_rename 'mystudents', 'my_students'
+
+#### RENAME in mysql
+USE db_name1;
+RENAME TABLE mystudents TO my_students;
+
+Column rename QUERY......issue
+
+#### TRUNCATE TABLE - REMOVE ALL DATA OF TABLE
+USE db_name1;
+TRUNCATE TABLE my_students
