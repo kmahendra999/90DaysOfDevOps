@@ -28,3 +28,28 @@ login
 
 CTRL + N for new query
 
+CREATE DATABASE db_name1;
+
+USE db_name1;
+
+USE db_name1;
+CREATE TABLE student1(
+id INT PRIMARY KEY,
+name VARCHAR NOT NULL,
+age INT DEFAULT 0
+);
+
+
+DROP TABLE student1;
+
+USE db_name1;
+CREATE TABLE student(
+id INT PRIMARY KEY,
+name VARCHAR NOT NULL,
+age INT DEFAULT 0
+);
+
+ALTER TABLE student ADD gender TEXT;
+
+ALTER TABLE student DROP COLUMN gender;
+
