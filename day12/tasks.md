@@ -13,6 +13,28 @@ Post it on Linkedin and Spread the knowledge.😃
 
 **Happy Learning :)** 
 
+<pre>
+  yum install mariadb* -y
+systemctl enable --now mariadb
+systemctl status mariadb
+netstat -tulpn | grep mysqld
+mysql -u root -p
+-p for password prompt
+Enter if you have seted else hit enter
+
+SHOW DATABASES;
+exit;
+
+mysql_secure_installaion
+
+Set options according to you.
+
+SHOW DATABASES;
+
+CREATE DATABASE db_name;
+</pre>
+
+
 
 DOWNLOAD AND SETUP SSMS
 
