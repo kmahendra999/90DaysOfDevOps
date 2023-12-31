@@ -19,6 +19,19 @@ Conflicts can occur when you merge or rebase branches that have diverged, and yo
 
 # Task-01 
 - Create a new branch and make some changes to it.
+
+  <code>git init
+  git branch -M dev
+  git remote add origin https://github.com/kmahendra999/DevOps.git
+  vim names.txt
+  git add .
+  git status
+  git commit -m "my initial commit"
+  git push -u origin dev
+  git log</code>
+
+  
+  
 - Use git stash to save the changes without committing them.
 - Switch to a different branch, make some changes and commit them.
 - Use git stash pop to bring the changes back and apply them on top of the new commits.
