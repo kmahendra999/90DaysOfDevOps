@@ -12,3 +12,8 @@ Let’s  show us your knowledge mixed with your creativity😎
 Post it on Linkedin and Spread the knowledge.😃 
 
 **Happy Learning :)** 
+
+
+DOWNLOAD AND SETUP SSMS
+
+https://youtu.be/iaUXjTL_F9U?si=XmwCDEGGCh-nnCmH
