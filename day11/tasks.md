@@ -508,10 +508,57 @@ To https://github.com/kmahendra999/Devops.git
 
 # Task-03
 - In Production branch Cherry pick Commit “Added feature2.2 in development branch” and added below lines in it:
+<pre>
+git log
+git checkout production
+git log
+git cherry-pick f0725fa4bf8a73c70edaebb77b33034f8042bceb
+git cherry-pick --continue
+git cherry-pick --continue
+git add .
+git commit -m "testy"
+git cherry-pick --continue
+git commit --amend
+git cherry-pick --continue
+git push origin production
+git log
+
+  </pre>
 - Line to be added after Line3>> This is the advancement of previous feature
 - Line4>>Added few more changes to make it more optimized.
 - Commit: Optimized the feature
 
+<pre>
+User@PARAM MINGW64 /d/OneDrive/Desktop/90Days (production)
+$ echo "This is the advancement of previous feature" >> ./Devops/Git/version01.txt
+
+User@PARAM MINGW64 /d/OneDrive/Desktop/90Days (production)
+$ echo "Added few more changes to make it more optimized." >> ./Devops/Git/version01.txt
+
+User@PARAM MINGW64 /d/OneDrive/Desktop/90Days (production)
+$ git add .
+warning: in the working copy of 'Devops/Git/version01.txt', LF will be replaced by CRLF the next time Git touches it
+
+User@PARAM MINGW64 /d/OneDrive/Desktop/90Days (production)
+$ git commit -m "Optimized the feature"
+[production 6d498de] Optimized the feature
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+
+User@PARAM MINGW64 /d/OneDrive/Desktop/90Days (production)
+$ git push origin production
+Enumerating objects: 9, done.
+Counting objects: 100% (9/9), done.
+Delta compression using up to 24 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (5/5), 497 bytes | 497.00 KiB/s, done.
+Total 5 (delta 0), reused 0 (delta 0), pack-reused 0
+remote: This repository moved. Please use the new location:
+remote:   https://github.com/kmahendra999/DevOps.git
+To https://github.com/kmahendra999/Devops.git
+   56f4327..6d498de  production -> production
+
+User@PARAM MINGW64 /d/OneDrive/Desktop/90Days (production)
+</pre>
 
 ## Reference [video](https://youtu.be/apGV9Kg7ics)
 
