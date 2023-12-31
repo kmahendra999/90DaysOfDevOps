@@ -17,3 +17,14 @@ Post it on Linkedin and Spread the knowledge.😃
 DOWNLOAD AND SETUP SSMS
 
 https://youtu.be/iaUXjTL_F9U?si=XmwCDEGGCh-nnCmH
+
+install SQL server 2022 Express edition
+
+after that install ssms.
+
+open ssms
+
+login
+
+CTRL + N for new query
+
