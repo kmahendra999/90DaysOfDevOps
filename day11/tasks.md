@@ -111,7 +111,16 @@ Date:   Sun Dec 31 13:39:12 2023 +0530
 User@PARAM MINGW64 /d/OneDrive/Desktop/90Days (master)
 </pre>
 
+
+
+
+
 - Switch to a different branch, make some changes and commit them.
+
+
+
+
+
   <pre>
     User@PARAM MINGW64 /d/OneDrive/Desktop/90Days (master)
     $ git branch -M desginer
@@ -140,7 +149,12 @@ User@PARAM MINGW64 /d/OneDrive/Desktop/90Days (master)
 
 
   </pre>
+
+
+  
 - Use git stash pop to bring the changes back and apply them on top of the new commits.
+
+
   <pre>
         User@PARAM MINGW64 /d/OneDrive/Desktop/90Days (desginer)
     $ git stash pop
@@ -197,10 +211,206 @@ User@PARAM MINGW64 /d/OneDrive/Desktop/90Days (master)
     On branch desginer
     nothing to commit, working tree clean
 
-    User@PARAM MINGW64 /d/OneDrive/Desktop/90Days (desginer)
   </pre>
 
+
+
+
+
+
+
+
+
+
+
 # Task-02
+<pre>User@PARAM MINGW64 /d/OneDrive/Desktop/90Days
+$ git init
+Initialized empty Git repository in D:/OneDrive/Desktop/90Days/.git/
+
+User@PARAM MINGW64 /d/OneDrive/Desktop/90Days (master)
+$ git pull https://github.com/kmahendra999/DevOps.git
+fatal: couldn't find remote ref HEAD
+
+User@PARAM MINGW64 /d/OneDrive/Desktop/90Days (master)
+$ mkdir -p ./Devops/Git
+
+User@PARAM MINGW64 /d/OneDrive/Desktop/90Days (master)
+$ echo "This is first feature of our application" > ./Devops/Git/version01.txt
+
+User@PARAM MINGW64 /d/OneDrive/Desktop/90Days (master)
+$ git checkout -b dev
+Switched to a new branch 'dev'
+
+User@PARAM MINGW64 /d/OneDrive/Desktop/90Days (dev)
+$ git remote add origin https://github.com/kmahendra999/Devops.git
+
+User@PARAM MINGW64 /d/OneDrive/Desktop/90Days (dev)
+$ git add .
+warning: in the working copy of 'Devops/Git/version01.txt', LF will be replaced by CRLF the next time Git touches it
+
+User@PARAM MINGW64 /d/OneDrive/Desktop/90Days (dev)
+$ git commit -m "My initial commit"
+[dev (root-commit) bfe110b] My initial commit
+ 1 file changed, 1 insertion(+)
+ create mode 100644 Devops/Git/version01.txt
+
+User@PARAM MINGW64 /d/OneDrive/Desktop/90Days (dev)
+$ git push https://github.com/kmahendra999/DevOps.git
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Writing objects: 100% (5/5), 343 bytes | 343.00 KiB/s, done.
+Total 5 (delta 0), reused 0 (delta 0), pack-reused 0
+To https://github.com/kmahendra999/DevOps.git
+ * [new branch]      dev -> dev
+
+User@PARAM MINGW64 /d/OneDrive/Desktop/90Days (dev)
+$ echo "This is the bug fix in development branch" > ./Devops/Git/version01.txt
+
+User@PARAM MINGW64 /d/OneDrive/Desktop/90Days (dev)
+$ git add .
+warning: in the working copy of 'Devops/Git/version01.txt', LF will be replaced by CRLF the next time Git touches it
+
+User@PARAM MINGW64 /d/OneDrive/Desktop/90Days (dev)
+$ git commit -m "Added feature2 in development branch"
+[dev dd4c82f] Added feature2 in development branch
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+User@PARAM MINGW64 /d/OneDrive/Desktop/90Days (dev)
+$ git push https://github.com/kmahendra999/DevOps.git
+Enumerating objects: 9, done.
+Counting objects: 100% (9/9), done.
+Writing objects: 100% (5/5), 387 bytes | 387.00 KiB/s, done.
+Total 5 (delta 0), reused 0 (delta 0), pack-reused 0
+To https://github.com/kmahendra999/DevOps.git
+   bfe110b..dd4c82f  dev -> dev
+
+User@PARAM MINGW64 /d/OneDrive/Desktop/90Days (dev)
+$ echo "This is gadbad code" >> ./Devops/Git/version01.txt
+
+User@PARAM MINGW64 /d/OneDrive/Desktop/90Days (dev)
+$ git add .
+warning: in the working copy of 'Devops/Git/version01.txt', LF will be replaced by CRLF the next time Git touches it
+
+User@PARAM MINGW64 /d/OneDrive/Desktop/90Days (dev)
+$ git commit -m "Added feature3 in development branch"
+
+git push https://github.com/kmahendra999/DevOps.git
+[dev 114b2ea] Added feature3 in development branch
+ 1 file changed, 1 insertion(+)
+Enumerating objects: 9, done.
+Counting objects: 100% (9/9), done.
+Delta compression using up to 24 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (5/5), 403 bytes | 403.00 KiB/s, done.
+Total 5 (delta 0), reused 0 (delta 0), pack-reused 0
+To https://github.com/kmahendra999/DevOps.git
+   dd4c82f..114b2ea  dev -> dev
+
+User@PARAM MINGW64 /d/OneDrive/Desktop/90Days (dev)
+$ echo "This is gadbad code" >> ./Devops/Git/version01.txt
+
+git add .
+
+git commit -m "Added feature4 in development branch"
+
+git push https://github.com/kmahendra999/DevOps.git
+warning: in the working copy of 'Devops/Git/version01.txt', LF will be replaced by CRLF the next time Git touches it
+[dev abee89b] Added feature4 in development branch
+ 1 file changed, 1 insertion(+)
+Enumerating objects: 9, done.
+Counting objects: 100% (9/9), done.
+Delta compression using up to 24 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (5/5), 399 bytes | 399.00 KiB/s, done.
+Total 5 (delta 0), reused 0 (delta 0), pack-reused 0
+To https://github.com/kmahendra999/DevOps.git
+   114b2ea..abee89b  dev -> dev
+
+User@PARAM MINGW64 /d/OneDrive/Desktop/90Days (dev)
+$ git status
+On branch dev
+nothing to commit, working tree clean
+
+User@PARAM MINGW64 /d/OneDrive/Desktop/90Days (dev)
+$ git log
+commit abee89bb352002dadb2f6a16a78e5d6ccf9a9729 (HEAD -> dev)
+Author: kmahendra999 <k.mahendra999@hoptmail.com>
+Date:   Sun Dec 31 14:05:35 2023 +0530
+
+    Added feature4 in development branch
+
+commit 114b2eaea90c231e73c9ab074371a90db1e027ab
+Author: kmahendra999 <k.mahendra999@hoptmail.com>
+Date:   Sun Dec 31 14:05:29 2023 +0530
+
+    Added feature3 in development branch
+
+commit dd4c82f0be5cc677d2d5a43fe1c76ca89b53e75f
+Author: kmahendra999 <k.mahendra999@hoptmail.com>
+Date:   Sun Dec 31 14:05:10 2023 +0530
+
+    Added feature2 in development branch
+
+commit bfe110b83d314bd56733f0cff1a8c6ffdae97fd6
+Author: kmahendra999 <k.mahendra999@hoptmail.com>
+Date:   Sun Dec 31 14:04:50 2023 +0530
+
+    My initial commit
+
+commit abee89bb352002dadb2f6a16a78e5d6ccf9a9729 (HEAD -> dev)
+Author: kmahendra999 <k.mahendra999@hoptmail.com>
+Date:   Sun Dec 31 14:05:35 2023 +0530
+
+    Added feature4 in development branch
+
+commit 114b2eaea90c231e73c9ab074371a90db1e027ab
+Author: kmahendra999 <k.mahendra999@hoptmail.com>
+Date:   Sun Dec 31 14:05:29 2023 +0530
+
+    Added feature3 in development branch
+
+commit dd4c82f0be5cc677d2d5a43fe1c76ca89b53e75f
+Author: kmahendra999 <k.mahendra999@hoptmail.com>
+Date:   Sun Dec 31 14:05:10 2023 +0530
+
+    Added feature2 in development branch
+
+commit bfe110b83d314bd56733f0cff1a8c6ffdae97fd6
+Author: kmahendra999 <k.mahendra999@hoptmail.com>
+Date:   Sun Dec 31 14:04:50 2023 +0530
+
+    My initial commit
+
+  
+    User@PARAM MINGW64 /d/OneDrive/Desktop/90Days (dev)
+    $ git revert dd4c82f0be5cc677d2d5a43fe1c76ca89b53e75f
+    Auto-merging Devops/Git/version01.txt
+    CONFLICT (content): Merge conflict in Devops/Git/version01.txt
+    error: could not revert dd4c82f... Added feature2 in development branch
+    hint: After resolving the conflicts, mark them with
+    hint: "git add/rm <pathspec>", then run
+    hint: "git revert --continue".
+    hint: You can instead skip this commit with "git revert --skip".
+    hint: To abort and get back to the state before "git revert",
+    hint: run "git revert --abort".
+
+    #'conflict resolved mannually'
+
+    User@PARAM MINGW64 /d/OneDrive/Desktop/90Days (dev|REVERTING)
+    $ git add .
+
+    User@PARAM MINGW64 /d/OneDrive/Desktop/90Days (dev|REVERTING)
+    $ git revert --continue
+    [dev 008d622] Revert "Added feature2 in development branch"
+     1 file changed, 2 insertions(+), 3 deletions(-)
+
+    User@PARAM MINGW64 /d/OneDrive/Desktop/90Days (dev)
+</pre>
+
+
+
+
 - In version01.txt of development branch add below lines after “This is the bug fix in development branch” that you added in Day10 and reverted to this commit.
 - Line2>> After bug fixing, this is the new feature with minor alteration”
 
@@ -211,7 +421,90 @@ User@PARAM MINGW64 /d/OneDrive/Desktop/90Days (master)
 - Line4>> Feature 2 is completed and ready for release
 
   Commit this with message “ Feature2 completed”
+
+<pre>
+    User@PARAM MINGW64 /d/OneDrive/Desktop/90Days (dev)
+$ echo "this is the new feature with minor alteration" >> ./Devops/Git/version01.txt
+
+User@PARAM MINGW64 /d/OneDrive/Desktop/90Days (dev)
+$ git add .
+warning: in the working copy of 'Devops/Git/version01.txt', LF will be replaced by CRLF the next time Git touches it
+
+User@PARAM MINGW64 /d/OneDrive/Desktop/90Days (dev)
+$ git commit -m "Added feature2.1 in development branch"
+[dev 32fadb6] Added feature2.1 in development branch
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+User@PARAM MINGW64 /d/OneDrive/Desktop/90Days (dev)
+$ echo " This is the advancement of previous feature" >> ./Devops/Git/version01.txt
+
+User@PARAM MINGW64 /d/OneDrive/Desktop/90Days (dev)
+$ git add .
+warning: in the working copy of 'Devops/Git/version01.txt', LF will be replaced by CRLF the next time Git touches it
+
+User@PARAM MINGW64 /d/OneDrive/Desktop/90Days (dev)
+$ git commit -m " Added feature2.2 in development branch"
+[dev f0725fa]  Added feature2.2 in development branch
+ 1 file changed, 1 insertion(+)
+
+User@PARAM MINGW64 /d/OneDrive/Desktop/90Days (dev)
+$ echo "Feature 2 is completed and ready for release" >> ./Devops/Git/version01.txt
+
+User@PARAM MINGW64 /d/OneDrive/Desktop/90Days (dev)
+$ git add .
+warning: in the working copy of 'Devops/Git/version01.txt', LF will be replaced by CRLF the next time Git touches it
+
+User@PARAM MINGW64 /d/OneDrive/Desktop/90Days (dev)
+$ git commit -m "Feature2 completed"
+[dev 5fe0e67] Feature2 completed
+ 1 file changed, 1 insertion(+)
+
+User@PARAM MINGW64 /d/OneDrive/Desktop/90Days (dev)
+
+  </pre>
+
+  
 - All these commits messages should be reflected in Production branch too which will come out from Master branch (Hint: try rebase).
+<pre>
+User@PARAM MINGW64 /d/OneDrive/Desktop/90Days (dev)
+$ git checkout -b production
+Switched to a new branch 'production'
+
+User@PARAM MINGW64 /d/OneDrive/Desktop/90Days (production)
+$ git rebase dev
+Current branch production is up to date.
+
+User@PARAM MINGW64 /d/OneDrive/Desktop/90Days (production)
+$ git status
+On branch production
+nothing to commit, working tree clean
+
+User@PARAM MINGW64 /d/OneDrive/Desktop/90Days (production)
+$ git log
+.
+  .
+  .
+  ..
+  
+User@PARAM MINGW64 /d/OneDrive/Desktop/90Days (production)
+$ git push origin production
+Enumerating objects: 24, done.
+Counting objects: 100% (24/24), done.
+Delta compression using up to 24 threads
+Compressing objects: 100% (7/7), done.
+Writing objects: 100% (20/20), 1.45 KiB | 1.45 MiB/s, done.
+Total 20 (delta 2), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (2/2), done.
+remote: This repository moved. Please use the new location:
+remote:   https://github.com/kmahendra999/DevOps.git
+remote:
+remote: Create a pull request for 'production' on GitHub by visiting:
+remote:      https://github.com/kmahendra999/DevOps/pull/new/production
+remote:
+To https://github.com/kmahendra999/Devops.git
+ * [new branch]      production -> production
+
+</pre>
 
 # Task-03
 - In Production branch Cherry pick Commit “Added feature2.2 in development branch” and added below lines in it:
