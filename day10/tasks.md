@@ -124,6 +124,30 @@ resolve in file mannually.
 <code>git revert --continue</code>
 
 ***
+### working with git reset command
+ <code>#add a file names.txt and push to remote
+git init
+git branch -M dev
+git remote add origin https://github.com/kmahendra999/DevOps.git
+vim names.txt
+git add .
+git commit -m "my initial commit"
+git status
+git push -u origin dev
+git log
+#add some files and deleted a file by mistake for test reset command
+touch {a..g}
+rm names.txt
+git status
+#commit the chnages by mistake done
+git add .
+git commit -m "file deleted by mistake and added {a..g}"
+git log
+#reset the chantges on #add a file names.txt and push to remote
+git reset 5680c7d326bb9e7423ea006931a5bbe39eacdbcd
+git log
+git status</code>
+***
 
 ## Task 2:
 
