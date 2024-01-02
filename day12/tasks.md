@@ -266,3 +266,18 @@ Column rename QUERY......issue
 #### TRUNCATE TABLE - REMOVE ALL DATA OF TABLE
 USE db_name1;
 TRUNCATE TABLE my_students
+
+
+### PRACTICE IN MYSQL/MARIADB :
+CREATE TABLE table_name(id INT PRIMARY KEY, name VARCHAR(255) NOT NULL, price INT DEFAULT 0);
+
+DROP TABLE table_name;
+
+CREATE TABLE table_name(id INT PRIMARY KEY, name VARCHAR(255) NOT NULL, price INT DEFAULT 0);
+
+ALTER TABLE table_name ADD column c INT;
+
+ALTER TABLE table_name DROP COLUMN c;
+
+ALTER TABLE table_name MODIFY COLUMN c INT NOT NULL;
+
