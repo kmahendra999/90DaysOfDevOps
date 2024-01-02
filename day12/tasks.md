@@ -281,3 +281,86 @@ ALTER TABLE table_name DROP COLUMN c;
 
 ALTER TABLE table_name MODIFY COLUMN c INT NOT NULL;
 
+ALTER TABLE table_name RENAME TO table_name1;
+
+ALTER TABLE table_name CHANGE COLUMN id sid INT;
+
+TRUNCATE TABLE table_name;
+
++===========================================
+
+## USING SQL CONSTRAINT
+
+CREATE TABLE t(c1 INT, c2 INT, c3 VARCHAR(255), PRIMARY KEY(c1,c2));
+
+CREATE TABLE t2(c2 INT PRIMARY KEY);
+
+CREATE TABLE t1(c1 INT PRIMARY KEY, c2 INT, FOREIGN KEY(c2) REFERENCES t2(c2));
+
+CREATE TABLE t(c1 INT, c2 INT, C3 INT, UNIQUE(c2,c3));
+
+CREATE TABLE t(c1 INT, c2 INT, CHECK(c1>0 AND c1>=C2));
+
+CREATE TABLE t11(c1 INT PRIMARY KEY, c2 VARCHAR(255) NOT NULL);
+
++============================================
+
+### MODIFYING DATA
+
+SHOW COLUMNS FROM table_name;
+
+INSERT INTO table_name(id, name, price) VALUES(001, 'Mahendra Kumar', 23);
+
+INSERT INTO table_name(id, name, price) VALUES(002, 'Raghvendra', 25), (003, 'Jitendra', 36), (004,"SING JI",45);
+
+#CREATE TABLE table_new(id INT PRIMARY KEY, name VARCHAR(255) NOT NULL, price INT DEFAULT 0);
+
+INSERT INTO table_new SELECT * FROM table_name;
+
+SELECT * FROM table_new;
+
+UPDATE table_new SET price = 25;
+
+UPDATE table_new SET name="Mahendra Kumar", price=85;
+
+INSERT INTO table_name(id, name, price) VALUES(005, 'Raghvendra', 65), (006, 'Jitendra', 36), (007,"SING JI",45);
+
+<pre>
+SELECT * FROM table_name;
++----+----------------+-------+
+| id | name           | price |
++----+----------------+-------+
+|  1 | Mahendra Kumar |    23 |
+|  2 | Raghvendra     |    25 |
+|  3 | Jitendra       |    36 |
+|  4 | SING JI        |    45 |
+|  5 | Raghvendra     |    65 |
+|  6 | Jitendra       |    36 |
+|  7 | SING JI        |    45 |
++----+----------------+-------+
+
+MariaDB [grras]> DELETE FROM table_name WHERE price=45;
+Query OK, 2 rows affected (0.001 sec)
+
+MariaDB [grras]> SELECT * FROM table_name;
++----+----------------+-------+
+| id | name           | price |
++----+----------------+-------+
+|  1 | Mahendra Kumar |    23 |
+|  2 | Raghvendra     |    25 |
+|  3 | Jitendra       |    36 |
+|  5 | Raghvendra     |    65 |
+|  6 | Jitendra       |    36 |
++----+----------------+-------+
+5 rows in set (0.000 sec)
+
+MariaDB [grras]> DELETE FROM table_name;
+Query OK, 5 rows affected (0.001 sec)
+
+MariaDB [grras]> SELECT * FROM table_name;
+Empty set (0.000 sec)
+
+MariaDB [grras]> 
+
+</pre>
+
