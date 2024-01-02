@@ -11,7 +11,29 @@
 ## Tasks
 1. Create a Dictionary in Python and write it to a json File.
 
-2. Read a json file `services.json` kept in this folder and print the service names of every cloud service provider.
+   <pre>
+     import json
+
+# Create a dictionary
+my_dict = {
+    "name": "John",
+    "age": 25,
+    "city": "New York",
+    "is_student": False,
+    "grades": [90, 85, 92]
+}
+
+# Specify the file path for the JSON file
+json_file_path = "my_data.json"
+
+# Write the dictionary to the JSON file
+with open(json_file_path, 'w') as json_file:
+    json.dump(my_dict, json_file, indent=4)
+
+print(f"Dictionary has been written to {json_file_path}")
+   </pre>
+
+3. Read a json file `services.json` kept in this folder and print the service names of every cloud service provider.
 
 ```
 output
