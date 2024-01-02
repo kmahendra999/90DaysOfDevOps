@@ -24,9 +24,117 @@ Python Tuple is a collection of Python objects much like a list but Tuples are i
 - Dictionary
 Python dictionary is like hash tables in any other language with the time complexity of O(1). It is an unordered collection of data values, used to store data values like a map, which, unlike other Data Types that hold only a single value as an element, Dictionary holds the key:value pair. Key-value is provided in the dictionary to make it more optimized
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ## Tasks
 1. Give the Difference between List, Tuple and set. Do Handson and put screenshots as per your understanding.
-2. Create below Dictionary and use Dictionary methods to print your favourite tool just by using the keys of the Dictionary.
+
+
+
+
+   <pre>
+#### List:
+
+Ordered collection of items.
+
+Mutable, meaning you can change, add, or remove elements after the list is defined.
+
+Created using square brackets [].
+
+Allows duplicate elements.
+
+Example:
+
+python
+
+<code>my_list = [1, 2, 3, 'a', 'b', 'c']</code>
+
+
+
+
+
+
+
+#### Tuple:
+
+Ordered collection of items.
+
+Immutable, meaning you cannot change, add, or remove elements after the tuple is defined.
+
+Created using parentheses ().
+
+Allows duplicate elements.
+
+Example:
+
+python
+
+<code>my_tuple = (1, 2, 3, 'a', 'b', 'c')</code>
+
+
+
+
+
+
+
+
+#### Set:
+
+Unordered collection of unique items.
+Mutable, meaning you can add or remove elements, but you cannot change individual elements.
+Created using curly braces {} or the set() constructor.
+Does not allow duplicate elements.
+Example:
+python
+Copy code
+my_set = {1, 2, 3, 'a', 'b', 'c'}
+Now, for a hands-on understanding, you can try creating and manipulating these data structures in a Python environment like an IDE or Jupyter Notebook. Here's a simple example using Python in a Jupyter Notebook:
+
+
+
+
+
+
+# List example
+<code>
+my_list = [1, 2, 3, 'a', 'b', 'c']
+print("List:", my_list)
+
+# Tuple example
+my_tuple = (1, 2, 3, 'a', 'b', 'c')
+print("Tuple:", my_tuple)
+
+# Set example
+my_set = {1, 2, 3, 'a', 'b', 'c'}
+print("Set:", my_set)
+</code>
+
+
+
+
+
+Feel free to experiment with adding, removing, or modifying elements in each data structure to observe their behavior.
+   </pre>
+
+
+   
+3. Create below Dictionary and use Dictionary methods to print your favourite tool just by using the keys of the Dictionary.
 ```
 fav_tools = 
 { 
