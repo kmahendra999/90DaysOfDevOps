@@ -24,6 +24,10 @@ azure : VM
 gcp : compute engine
 
 ```
+![image](https://github.com/kmahendra999/90DaysOfDevOps/assets/9668316/55c49149-46cd-4638-a34e-3126fc187c12)
+
+
+
 3. Read YAML file using python, file `services.yaml` and read the contents to convert yaml to json
 
 Python Project for your practice:
