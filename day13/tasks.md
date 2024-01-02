@@ -19,7 +19,11 @@ You can install Python in your System whether it is window, MacOS, ubuntu, cento
 
 Task1:
 1. Install Python in your respective OS, and check the version.
-2. Read about different Data Types in Python.
+   <pre>
+     dnf install python3 -y
+     alternatives --set python /usr/bin/python3
+   </pre>
+3. Read about different Data Types in Python.
 
 
 You can get the complete Playlist [here](https://www.youtube.com/watch?v=abPgj_3hzVY&list=PLlfy9GnSVerS_L5z0COaF7rsbgWmJXTOM)🙌
