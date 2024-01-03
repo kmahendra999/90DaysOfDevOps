@@ -20,6 +20,39 @@ Learn how to use the docker-compose.yml file, to set up the environment, configu
 
 [Sample docker-compose.yaml file](https://github.com/LondheShubham153/90DaysOfDevOps/blob/master/2023/day18/docker-compose.yaml)
 
+<pre>
+[root@node5 ~]# mkdir test1
+[root@node5 ~]# cd test1
+[root@node5 test1]# vim docker-compose.yml 
+[root@node5 test1]# cat docker-compose.yml 
+version : "3.3"
+services:
+  web:
+    image: nginx:latest
+    ports:
+      - "80:80"
+  db:
+    image: mysql
+    ports:
+      - "3306:3306"
+    environment:
+      - "MYSQL_ROOT_PASSWORD=test@123"
+[root@node5 test1]# docker compose up -d
+[+] Running 8/8
+ ✔ web 7 layers [⣿⣿⣿⣿⣿⣿⣿]      0B/0B      Pulled                          22.4s 
+   ✔ af107e978371 Already exists                                           0.0s 
+   ✔ 336ba1f05c3e Pull complete                                           13.4s 
+   ✔ 8c37d2ff6efa Pull complete                                            4.1s 
+   ✔ 51d6357098de Pull complete                                            4.1s 
+   ✔ 782f1ecce57d Pull complete                                            6.2s 
+   ✔ 5e99d351b073 Pull complete                                            6.2s 
+   ✔ 7b73345df136 Pull complete                                            9.1s 
+[+] Running 3/3
+ ✔ Network test1_default  Created                                          0.3s 
+ ✔ Container test1-web-1  Started                                          0.1s 
+ ✔ Container test1-db-1   Started                                          0.1s 
+</pre>
+
 
 ## Task-2
 - Pull a pre-existing Docker image from a public repository (e.g. Docker Hub) and run it on your local machine. Run the container as a non-root user (Hint- Use `usermod ` command to give user permission to docker). Make sure you reboot instance after giving permission to user.
