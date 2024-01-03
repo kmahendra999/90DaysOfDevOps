@@ -256,7 +256,25 @@ CONTAINER ID   IMAGE         COMMAND              CREATED              STATUS   
 
 - Use the `docker stats` command to view resource usage statistics for one or more containers.
 
+<pre>
+[root@node5 ~]# docker stats apachecontainer1
+ CONTAINER ID   NAME               CPU %     MEM USAGE / LIMIT     MEM %     NET I/O       BLOCK I/O   PIDS
+2840c45b5a86   apachecontainer1   0.01%     6.816MiB / 1.706GiB   0.39%     2.63kB / 0B   0B / 0B     82
+
+</pre>
+
 - Use the `docker top` command to view the processes running inside a container.
+
+<pre>
+ [root@node5 ~]# docker top apachecontainer1
+UID                 PID                 PPID                C                   STIME               TTY                 TIME                CMD
+root                4818                4799                0                   00:29               pts/0               00:00:00            httpd -DFOREGROUND
+33                  4841                4818                0                   00:29               pts/0               00:00:00            httpd -DFOREGROUND
+33                  4842                4818                0                   00:29               pts/0               00:00:00            httpd -DFOREGROUND
+33                  4843                4818                0                   00:29               pts/0               00:00:00            httpd -DFOREGROUND
+[root@node5 ~]# 
+
+</pre>
 
 - Use the `docker save` command to save an image to a tar archive.
 
