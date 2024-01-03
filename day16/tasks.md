@@ -278,6 +278,45 @@ root                4818                4799                0                   
 
 - Use the `docker save` command to save an image to a tar archive.
 
+<pre>
+ [root@node5 ~]# docker run -dit --name=con1 httpd:latest
+ac7149205c99c7dd60c52c151099cf1d4f45f424e95e0a7f684858284f96a9ea
+
+[root@node5 ~]# docker ps -a
+CONTAINER ID   IMAGE          COMMAND              CREATED          STATUS                      PORTS     NAMES
+ac7149205c99   httpd:latest   "httpd-foreground"   30 seconds ago   Exited (0) 15 seconds ago             con1
+
+ [root@node5 ~]# docker exec -it con1 /bin/bash
+ 
+      root@ac7149205c99:/usr/local/apache2/htdocs# cat index.html 
+      <html><body><h1>It works!</h1></body></html>
+      root@ac7149205c99:/usr/local/apache2/htdocs# echo "Hello again checked, it's worked" >> index.html 
+      root@ac7149205c99:/usr/local/apache2/htdocs# cat index.html 
+      <html><body><h1>It works!</h1></body></html>
+      Hello again checked, it's worked
+      root@ac7149205c99:/usr/local/apache2/htdocs# read escape sequence
+      [root@node5 ~]# docker ps
+      CONTAINER ID   IMAGE          COMMAND              CREATED         STATUS         PORTS     NAMES
+      ac7149205c99   httpd:latest   "httpd-foreground"   5 minutes ago   Up 4 minutes   80/tcp    con1
+
+[root@node5 ~]# docker commit con1 mycustonhttpd:latest
+sha256:b9451f4b3e5166849fd96a26f52bcae5ceafad766db6947668371b24819d6343
+
+[root@node5 ~]# docker save -o mycustomhttpdimage.tar.gz mycustonhttpd:latest
+
+[root@node5 ~]# ls
+anaconda-ks.cfg  Desktop  Documents  Downloads  Music  mycustomhttpdimage.tar.gz  original-ks.cfg  Pictures  Public  Templates  Videos
+
+[root@node5 ~]# docker load -i mycustomhttpdimage.tar.gz 
+d128c8f47469: Loading layer [==================================================>]  5.632kB/5.632kB
+Loaded image: mycustonhttpd:latest
+[root@node5 ~]# docker images
+REPOSITORY        TAG       IMAGE ID       CREATED         SIZE
+mycustonhttpd     latest    b9451f4b3e51   6 minutes ago   167MB
+
+
+</pre>
+
 - Use the `docker load` command to load an image from a tar archive.
 
 These tasks involve simple operations that can be used to manage images and containers. 
