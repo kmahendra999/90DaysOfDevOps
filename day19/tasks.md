@@ -86,9 +86,24 @@ root-wpcon-4      wordpress:latest   "docker-entrypoint.sh apache2-foreground"  
 
 ## Task-2
 - Learn how to use Docker Volumes and Named Volumes to share files and directories between multiple containers.
+
+<pre>
+docker run -v /data-volume:/var/lib/mysql mysql
+</pre>
+
 - Create two or more containers that read and write data to the same volume using the `docker run --mount` command.
+
+<pre>
+docker run --mount type=bind, source=/data-volume, target=/var/lib/mysql mysql
+</pre>
+
 - Verify that the data is the same in all containers by using the docker exec command to run commands inside each container.
+
+<pre>docker attach mysqlconname</pre>
+
 - Use the docker volume ls command to list all volumes and docker volume rm command to remove the volume when you're done.
+
+
 
 ## You can use this task as *Project* to add in your resume.
 
