@@ -113,7 +113,12 @@ docker run --mount type=bind, source=/data-volume, target=/var/lib/mysql mysql
 <pre>docker attach mysqlconname</pre>
 
 - Use the docker volume ls command to list all volumes and docker volume rm command to remove the volume when you're done.
-
+<pre>
+[admin@node5 ~]$ sudo docker volume rm data_volume
+data_volume
+[admin@node5 ~]$ sudo docker volume ls
+DRIVER    VOLUME NAME
+</pre>
 
 
 ## You can use this task as *Project* to add in your resume.
