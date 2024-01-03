@@ -88,7 +88,8 @@ root-wpcon-4      wordpress:latest   "docker-entrypoint.sh apache2-foreground"  
 - Learn how to use Docker Volumes and Named Volumes to share files and directories between multiple containers.
 
 <pre>
-docker run -v /data-volume:/var/lib/mysql mysql
+docker volume create data-volume
+docker run -v data-volume:/var/lib/mysql mysql
 </pre>
 
 - Create two or more containers that read and write data to the same volume using the `docker run --mount` command.
