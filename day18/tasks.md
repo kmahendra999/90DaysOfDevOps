@@ -56,6 +56,11 @@ services:
 
 ## Task-2
 - Pull a pre-existing Docker image from a public repository (e.g. Docker Hub) and run it on your local machine. Run the container as a non-root user (Hint- Use `usermod ` command to give user permission to docker). Make sure you reboot instance after giving permission to user.
+<pre>
+Make sure docker is installed and system is updated (This is already been completed as a part of previous tasks):
+sudo usermod -a -G docker $USER
+Reboot the machine.
+</pre>
 - Inspect the container's running processes and exposed ports using the docker inspect command.
 - Use the docker logs command to view the container's log output.
 - Use the docker stop and docker start commands to stop and start the container.
