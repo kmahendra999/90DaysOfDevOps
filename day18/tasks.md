@@ -63,11 +63,52 @@ Reboot the machine.
 </pre>
 - Inspect the container's running processes and exposed ports using the docker inspect command.
 <pre>
-docker inspect --type=container con1
+[admin@node5 ~]$ docker top con1
+UID                 PID                 PPID                C                   STIME               TTY                 TIME                CMD
+root                6372                6352                0                   07:18               pts/0               00:00:00            httpd -DFOREGROUND
+33                  6402                6372                0                   07:18               pts/0               00:00:00            httpd -DFOREGROUND
+33                  6403                6372                0                   07:18               pts/0               00:00:00            httpd -DFOREGROUND
+33                  6404                6372                0                   07:18               pts/0               00:00:00            httpd -DFOREGROUND
+
+
+[admin@node5 ~]$ docker port con1
+80/tcp -> 0.0.0.0:8080
+80/tcp -> [::]:8080
+[admin@node5 ~]$ 
+
+  
 </pre>
 - Use the docker logs command to view the container's log output.
+<pre>
+[admin@node5 ~]$  docker logs con1
+AH00558: httpd: Could not reliably determine the server's fully qualified domain name, using 172.17.0.2. Set the 'ServerName' directive globally to suppress this message
+AH00558: httpd: Could not reliably determine the server's fully qualified domain name, using 172.17.0.2. Set the 'ServerName' directive globally to suppress this message
+[Wed Jan 03 15:18:06.561209 2024] [mpm_event:notice] [pid 1:tid 139804695062400] AH00489: Apache/2.4.58 (Unix) configured -- resuming normal operations
+[Wed Jan 03 15:18:06.565704 2024] [core:notice] [pid 1:tid 139804695062400] AH00094: Command line: 'httpd -D FOREGROUND'
+[admin@node5 ~]$ 
+
+</pre>
 - Use the docker stop and docker start commands to stop and start the container.
+<pre>
+[admin@node5 ~]$ docker stop con1
+con1
+[admin@node5 ~]$ docker ps -a
+CONTAINER ID   IMAGE     COMMAND              CREATED         STATUS                     PORTS     NAMES
+545e0dbc9b6d   httpd     "httpd-foreground"   2 minutes ago   Exited (0) 2 seconds ago             con1
+[admin@node5 ~]$ docker start con1
+con1
+[admin@node5 ~]$ docker ps -a
+CONTAINER ID   IMAGE     COMMAND              CREATED         STATUS        PORTS                                   NAMES
+545e0dbc9b6d   httpd     "httpd-foreground"   2 minutes ago   Up 1 second   0.0.0.0:8080->80/tcp, :::8080->80/tcp   con1
+[admin@node5 ~]$ 
+
+</pre>
 - Use the docker rm command to remove the container when you're done.
+<pre>
+[admin@node5 ~]$ docker rm -f con1
+con1
+[admin@node5 ~]$
+</pre>
 
 ## How to run Docker commands without sudo?
 - Make sure docker is installed and system is updated (This is already been completed as a part of previous tasks):
