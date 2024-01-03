@@ -22,6 +22,68 @@ When we run a container, it has its own storage space that is only accessible by
 - Use the `docker-compose ps` command to view the status of all containers, and `docker-compose logs` to view the logs of a specific service.
 - Use the `docker-compose down` command to stop and remove all containers, networks, and volumes associated with the application
 
+<pre>
+  [admin@node5 root]$ sudo docker compose up -d
+[+] Running 6/0
+ ✔ Container root-mysqlcon-2  Running                                                                                                                                                                                          0.0s 
+ ✔ Container root-mysqlcon-1  Running                                                                                                                                                                                          0.0s 
+ ✔ Container root-wpcon-2     Running                                                                                                                                                                                          0.0s 
+ ✔ Container root-wpcon-3     Running                                                                                                                                                                                          0.0s 
+ ✔ Container root-wpcon-4     Running                                                                                                                                                                                          0.0s 
+ ✔ Container root-wpcon-1     Running                                                                                                                                                                                          0.0s 
+[admin@node5 root]$ sudo docker ps -a
+CONTAINER ID   IMAGE              COMMAND                  CREATED          STATUS          PORTS                                   NAMES
+f442bc147590   wordpress:latest   "docker-entrypoint.s…"   17 seconds ago   Up 14 seconds   0.0.0.0:8780->80/tcp, :::8780->80/tcp   root-wpcon-2
+0a0a950b2967   wordpress:latest   "docker-entrypoint.s…"   17 seconds ago   Up 9 seconds    0.0.0.0:8781->80/tcp, :::8781->80/tcp   root-wpcon-3
+6fdb779adb9c   wordpress:latest   "docker-entrypoint.s…"   17 seconds ago   Up 7 seconds    0.0.0.0:8782->80/tcp, :::8782->80/tcp   root-wpcon-4
+efa550d9690b   wordpress:latest   "docker-entrypoint.s…"   17 seconds ago   Up 6 seconds    0.0.0.0:8783->80/tcp, :::8783->80/tcp   root-wpcon-1
+3a2d8ddd1c08   mysql:latest       "docker-entrypoint.s…"   17 seconds ago   Up 16 seconds   3306/tcp, 33060/tcp                     root-mysqlcon-2
+d4978e02b5dd   mysql:latest       "docker-entrypoint.s…"   17 seconds ago   Up 15 seconds   3306/tcp, 33060/tcp                     root-mysqlcon-1
+[admin@node5 root]$ sudo cat docker-compose.yml
+version: "3.3"
+
+services:
+  mysqlcon:
+    image: mysql:latest
+    #container_name: mysqlcon
+    environment:
+      - MYSQL_ROOT_PASSWORD=redhat
+      - MYSQL_DATABASE=db_name
+      - MYSQL_USER=db_user
+      - MYSQL_PASSWORD=db_password
+    volumes:
+      - /blogdb:/var/lib/mysql
+    # Set the initial scale for mysqlcon to 1 replica
+    deploy:
+      replicas: 2
+
+  wpcon:
+    image: wordpress:latest
+    environment:
+      - WORDPRESS_DB_HOST=mysqlcon
+      - WORDPRESS_DB_USER=db_user
+      - WORDPRESS_DB_PASSWORD=db_password
+      - WORDPRESS_DB_NAME=db_name
+    ports:
+      - "8780-8783:80"
+    links:
+            - mysqlcon
+    # Set the initial scale for wpcon to 3 replicas
+    deploy:
+      replicas: 4
+[admin@node5 root]$ docker compose ps
+stat .: permission denied
+[admin@node5 root]$ sudo docker compose ps
+NAME              IMAGE              COMMAND                                     SERVICE    CREATED          STATUS          PORTS
+root-mysqlcon-2   mysql:latest       "docker-entrypoint.sh mysqld"               mysqlcon   10 minutes ago   Up 10 minutes   3306/tcp, 33060/tcp
+root-wpcon-1      wordpress:latest   "docker-entrypoint.sh apache2-foreground"   wpcon      10 minutes ago   Up 10 minutes   0.0.0.0:8783->80/tcp, :::8783->80/tcp
+root-wpcon-2      wordpress:latest   "docker-entrypoint.sh apache2-foreground"   wpcon      10 minutes ago   Up 10 minutes   0.0.0.0:8780->80/tcp, :::8780->80/tcp
+root-wpcon-3      wordpress:latest   "docker-entrypoint.sh apache2-foreground"   wpcon      10 minutes ago   Up 10 minutes   0.0.0.0:8781->80/tcp, :::8781->80/tcp
+root-wpcon-4      wordpress:latest   "docker-entrypoint.sh apache2-foreground"   wpcon      10 minutes ago   Up 10 minutes   0.0.0.0:8782->80/tcp, :::8782->80/tcp
+[admin@node5 root]$ 
+
+</pre>
+
 ## Task-2
 - Learn how to use Docker Volumes and Named Volumes to share files and directories between multiple containers.
 - Create two or more containers that read and write data to the same volume using the `docker run --mount` command.
