@@ -88,13 +88,23 @@ root-wpcon-4      wordpress:latest   "docker-entrypoint.sh apache2-foreground"  
 - Learn how to use Docker Volumes and Named Volumes to share files and directories between multiple containers.
 
 <pre>
+keeping data on docker volume concept
 docker volume create data-volume
 docker run -v data-volume:/var/lib/mysql mysql
+
+[root@node5 yum.repos.d]# docker volume ls
+DRIVER    VOLUME NAME
+local     data_volume
+
+  
+if volume will not created it will create automatticly.
 </pre>
 
 - Create two or more containers that read and write data to the same volume using the `docker run --mount` command.
 
 <pre>
+keeping data on parent machine /data-volume
+docker run -v /data-volumne:/var/lib/mysql mysql
 docker run --mount type=bind, source=/data-volume, target=/var/lib/mysql mysql
 </pre>
 
