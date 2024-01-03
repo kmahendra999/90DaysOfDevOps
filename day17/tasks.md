@@ -92,6 +92,79 @@ Now, you have created custom Docker images for MySQL and WordPress, and you've s
 
 - Push the image to a public or private repository (e.g. Docker Hub )
 
+<pre>
+  [root@node5 ~]# docker login
+Log in with your Docker ID or email address to push and pull images from Docker Hub. If you don't have a Docker ID, head over to https://hub.docker.com/ to create one.
+You can log in with your password or a Personal Access Token (PAT). Using a limited-scope PAT grants better security and is required for organizations using SSO. Learn more at https://docs.docker.com/go/access-tokens/
+
+Username: domainindustries
+Password: 
+WARNING! Your password will be stored unencrypted in /root/.docker/config.json.
+Configure a credential helper to remove this warning. See
+https://docs.docker.com/engine/reference/commandline/login/#credentials-store
+
+Login Succeeded
+
+[root@node5 ~]# docker tag custom-mysql:latest domainindustries/mysql-wp:latest
+  
+[root@node5 ~]# docker push domainindustries/mysql-wp:latest
+The push refers to repository [docker.io/domainindustries/mysql-wp]
+e4ee9c43adca: Mounted from library/mysql 
+8bb27dddf553: Mounted from library/mysql 
+bea7023e9dd9: Mounted from library/mysql 
+d30c9e468341: Mounted from library/mysql 
+7242463c3e84: Mounted from library/mysql 
+7d6226d7a694: Mounted from library/mysql 
+f8ee6fd60415: Mounted from library/mysql 
+9166c8be8ddc: Mounted from library/mysql 
+805c4ad62bbd: Mounted from library/mysql 
+d87ce14fed78: Mounted from library/mysql 
+latest: digest: sha256:89fe6e7a7fb50d3c72cbe2a3b9172d8839f950ae37faafc8aca20391de0a3473 size: 2411
+  
+[root@node5 ~]# docker images
+REPOSITORY                  TAG       IMAGE ID       CREATED             SIZE
+mycustonhttpd               latest    b9451f4b3e51   About an hour ago   167MB
+vimal13/welcome             v2        5b2d1ac9e5df   7 days ago          204MB
+vimal13/welcome             v1        31330db91ebe   7 days ago          204MB
+mysql                       latest    73246731c4b0   2 weeks ago         619MB
+domainindustries/mysql-wp   latest    ecfe1c31f183   2 weeks ago         619MB
+custom-mysql                latest    ecfe1c31f183   2 weeks ago         619MB
+custom-wordpress            latest    24edb931cf4e   3 weeks ago         739MB
+wordpress                   latest    fd2f5a0c6fba   3 weeks ago         739MB
+httpd                       latest    6fd77d7e5eb7   2 months ago        167MB
+hello-world                 latest    d2c94e258dcb   8 months ago        13.3kB
+
+[root@node5 ~]# docker tag custom-wordpress:latest domainindustries/custom-wp:latest
+  
+[root@node5 ~]# docker push domainindustries/custom-wp:latest
+The push refers to repository [docker.io/domainindustries/custom-wp]
+1864ea81492e: Mounted from library/wordpress 
+69ad30b02533: Mounted from library/wordpress 
+edf4b5533c54: Mounted from library/wordpress 
+2bc6c6bf963c: Mounted from library/wordpress 
+da50bd45aec4: Mounted from library/wordpress 
+92dc213dec8e: Mounted from library/wordpress 
+164503473204: Mounted from library/wordpress 
+bc571d062ee0: Mounted from library/wordpress 
+b3bace8598d1: Mounted from library/wordpress 
+ecf8ba143574: Mounted from library/wordpress 
+1053def76735: Mounted from library/wordpress 
+6e71476f2417: Mounted from library/wordpress 
+380941c54064: Mounted from library/wordpress 
+d0b82de7a516: Mounted from library/wordpress 
+a74fbcdc7b18: Mounted from library/wordpress 
+5dd2e9a27d29: Mounted from library/wordpress 
+20b4537eb782: Mounted from library/wordpress 
+38a6e0f337b9: Mounted from library/wordpress 
+a84f293bd7d4: Mounted from library/wordpress 
+e51e598b299b: Mounted from library/wordpress 
+7292cf786aa8: Mounted from library/httpd 
+latest: digest: sha256:82f32c5902f6a89888fe29b9b5248b3c8c2f37e800ef7a30ef8f8da6ef2f9ab6 size: 4711
+[root@node5 ~]# 
+
+</pre>
+
+
 For Refference Project visit [here](https://youtu.be/Tevxhn6Odc8)
 
 If you want to dive further, Watch [bootcamp](https://youtube.com/playlist?list=PLlfy9GnSVerRqYJgVYO0UiExj5byjrW8u) 
