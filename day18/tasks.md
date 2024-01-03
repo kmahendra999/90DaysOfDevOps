@@ -62,6 +62,9 @@ sudo usermod -a -G docker $USER
 Reboot the machine.
 </pre>
 - Inspect the container's running processes and exposed ports using the docker inspect command.
+<pre>
+docker inspect --type=container con1
+</pre>
 - Use the docker logs command to view the container's log output.
 - Use the docker stop and docker start commands to stop and start the container.
 - Use the docker rm command to remove the container when you're done.
