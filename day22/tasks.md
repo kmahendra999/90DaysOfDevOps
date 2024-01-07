@@ -84,9 +84,26 @@ sudo systemctl daemon-reload
 systemctl enable --now jenkins
 </code>
 
+<code>
+firewall-cmd --add-port=8080/tcp --permanent
+firewall-cmd --reload
+</code>
+
 ## Chagne port from 8080 to xxxx
 <code>
    vim /usr/lib/systemd/system/jenkins.service 
    sudo systemctl daemon-reload
    systemctl restart jenkins
 </code>
+
+Get the password from 
+<code>
+/var/lib/jenkins/secrets/initialAdminPassword
+</code>
+
+open url in browser http://192.168.29.35:9999/
+
+Documentation : https://www.tecmint.com/install-jenkins-on-centos-8/#attachment_34899
+
+Enter pasword >> Install suggested plugins >>
+
