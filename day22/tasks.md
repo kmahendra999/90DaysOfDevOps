@@ -45,3 +45,43 @@ Hint: Use link for [Article](https://www.geeksforgeeks.org/what-is-jenkins)
 
 Don't forget to post your progress on Linkedin. Till then Happy learning :) 
 
+
+### Settingup java 11
+<code>
+java -version
+yum install java-11-openjdk-devel
+yum install java-11-openjdk
+++++++++++++++++++++++++++++++++++++++++++++++++
+sudo alternatives --config java
+alternatives --config javac
+java -version
+echo $JAVA_HOME
+++++++++++++++++++++++++++++++++++++++++++++++++
+update-alternatives --config java
+**copy the java path from output
+++++++++++++++++++++++++++++++++++++++++++++++++
+vim ~/.bash_profile
+source ~/.bash_profile
+echo $JAVA_HOME
+++++++++++++++++++++++++++++++++++++++++++++++++
+Refrence : https://sysadminxpert.com/steps-to-upgrade-java-8-to-java-11-on-centos-7/
+</code>
+
+
+### install repo of jenkins
+<code>
+sudo wget -O /etc/yum.repos.d/jenkins.repo https://pkg.jenkins.io/redhat-stable/jenkins.repo
+sudo rpm --import https://pkg.jenkins.io/redhat-stable/jenkins.io-2023.key
+sudo dnf upgrade
+</code>
+
+# Add required dependencies for the jenkins package
+
+<code>
+sudo dnf install fontconfig java-17-openjdk
+sudo dnf install jenkins
+sudo systemctl daemon-reload
+systemctl enable --now jenkins
+</code>
+
+
