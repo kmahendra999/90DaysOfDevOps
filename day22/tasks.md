@@ -100,3 +100,4 @@ Documentation : https://www.tecmint.com/install-jenkins-on-centos-8/#attachment_
 
 Enter pasword >> Install suggested plugins >> Create first admin user >> setup url >> Start using jenkins
 
+Then setup pipeline as given instructions on url : https://www.geeksforgeeks.org/what-is-jenkins/#GFG_AD_gfg_outstream_incontent
