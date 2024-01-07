@@ -84,4 +84,9 @@ sudo systemctl daemon-reload
 systemctl enable --now jenkins
 </code>
 
-
+## Chagne port from 8080 to xxxx
+<code>
+   vim /usr/lib/systemd/system/jenkins.service 
+   sudo systemctl daemon-reload
+   systemctl restart jenkins
+</code>
