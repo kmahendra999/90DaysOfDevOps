@@ -105,5 +105,5 @@ open url in browser http://192.168.29.35:9999/
 
 Documentation : https://www.tecmint.com/install-jenkins-on-centos-8/#attachment_34899
 
-Enter pasword >> Install suggested plugins >>
+Enter pasword >> Install suggested plugins >> Create first admin user >> setup url >> Start using jenkins
 
