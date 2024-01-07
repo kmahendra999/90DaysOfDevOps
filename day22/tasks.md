@@ -76,7 +76,6 @@ sudo dnf upgrade
 </code>
 
 # Add required dependencies for the jenkins package
-
 <code>
 sudo dnf install fontconfig java-17-openjdk
 sudo dnf install jenkins
@@ -97,6 +96,7 @@ firewall-cmd --reload
 </code>
 
 Get the password from 
+
 <code>
 /var/lib/jenkins/secrets/initialAdminPassword
 </code>
