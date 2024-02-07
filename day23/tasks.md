@@ -51,6 +51,19 @@ A freestyle project in Jenkins is a type of project that allows you to build, te
 
 # Task-02
 - Create Jenkins project to run "docker-compose up -d" command to start the multiple containers defined in the compose file (Hint- use day-19 Application & Database docker-compose file)
+  <pre>
+   Github repo : https://github.com/kmahendra999/dockercomposeday23
+
+   Create item >> frestule
+   configure steps
+     Description - test
+     Source Code Management - Git - Repository url : https://github.com/kmahendra999/dockercomposeday23.git
+     enable ; GitHub hook trigger for GITScm polling
+     Build Steps : execute shell
+       sudo docker compose up -d
+       sudo docker compose ps
+   Save
+  </pre>
 - Set up a cleanup step in the Jenkins project to run "docker-compose down" command to stop and remove the containers defined in the compose file.
 
 For Refference jenkins Freestyle Project visit [here](https://youtu.be/wwNWgG5htxs)
