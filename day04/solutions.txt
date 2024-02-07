@@ -1,0 +1,110 @@
+Day 4 Task: Basic Linux Shell Scripting for DevOps Engineers.
+What is Kernel
+The kernel is a computer program that is the core of a computer’s operating system, with complete control over everything in the system.
+
+What is Shell
+A shell is special user program which provide an interface to user to use operating system services. Shell accept human readable commands from user and convert them into something which kernel can understand. It is a command language interpreter that execute commands read from input devices such as keyboards or from files. The shell gets started when the user logs in or start the terminal.
+
+What is Linux Shell Scripting?
+A shell script is a computer program designed to be run by a linux shell, a command-line interpreter. The various dialects of shell scripts are considered to be scripting languages. Typical operations performed by shell scripts include file manipulation, program execution, and printing text.
+
+Tasks
+
+Explain in your own words and examples, what is Shell Scripting for DevOps.
+Shell scripting for DevOps means telling your computer what to do automatically. It's like giving it a list of tasks in a special language that it understands. This helps people in IT and software make things happen faster and without mistakes by writing down the steps for the computer to follow.
+
+
+
+What is #!/bin/bash? can we write #!/bin/sh as well?
+
+#!/bin/bash and #!/bin/sh are known as shebangs, and they are used in the first line of a shell script to specify which interpreter should be used to execute the script.
+
+#!/bin/bash:
+
+This shebang specifies that the Bash shell should be used to interpret and execute the script.
+Bash (Bourne Again SHell) is an extended version of the original Unix shell, providing additional features and improvements.
+#!/bin/sh:
+
+This shebang specifies the generic Bourne shell as the interpreter.
+The Bourne shell is a simpler shell compared to Bash and may lack some of the advanced features found in Bash.
+In many systems, /bin/sh is a symbolic link or an actual executable that points to a specific shell, which could be Bash, Dash, or another compatible shell.
+
+So, you can use either shebang depending on your script's requirements:
+
+If your script uses features specific to Bash, go with #!/bin/bash.
+If you want to stick to a more basic shell or ensure compatibility across different systems, you can use #!/bin/sh.
+In practice, using #!/bin/bash is common, especially when Bash features are needed. However, for simpler scripts with no Bash-specific features, using #!/bin/sh is perfectly fine and may be more portable across various Unix-like systems.
+
+
+
+
+
+
+
+Write a Shell Script which prints I will complete #90DaysOofDevOps challenge
+vim ./motivation_script.sh
+#!/bin/bash
+
+# This is a simple shell script
+# that prints a motivational statement.
+
+echo "I will complete #90DaysOfDevOps challenge"
+
+Give permission to file
+chmod +x motivation_script.sh
+
+run that file
+./motivation_script.sh
+
+
+Write a Shell Script to take user input, input from arguments and print the variables.
+#!/bin/bash
+
+# This script takes user input and command line arguments
+# and prints the variables.
+
+# Take user input
+echo -n "Enter your name: "
+read username
+
+# Take command line arguments
+arg1=$1
+arg2=$2
+
+# Print the variables
+echo "User input: $username"
+echo "Command line argument 1: $arg1"
+echo "Command line argument 2: $arg2"
+
+
+chmod +x input_script.sh
+
+./input_script.sh argument1 argument2
+
+
+Write an Example of If else in Shell Scripting by comparing 2 numbers
+#!/bin/bash
+
+# This script compares two numbers using if-else statement.
+
+# Taking user input for two numbers
+echo -n "Enter the first number: "
+read num1
+
+echo -n "Enter the second number: "
+read num2
+
+# Comparing the numbers
+if [ "$num1" -eq "$num2" ]; then
+    echo "Both numbers are equal."
+elif [ "$num1" -gt "$num2" ]; then
+    echo "$num1 is greater than $num2."
+else
+    echo "$num1 is less than $num2."
+fi
+
+
+
+chmod +x compare_numbers.sh
+
+./compare_numbers.sh

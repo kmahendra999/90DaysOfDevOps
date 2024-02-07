@@ -1,0 +1,60 @@
+Day 1: 
+📍 as part of our Day 01 of #90days and #90daysofdevops. 👨‍💻🔍
+
+Table of contents
+---------------------------
+1. Fork the Repo and take it to your local computer and create repository in your account and upload the data there.
+
+Solution :
+open in browser https://github.com/kmahendra999/90DaysOfDevOps_fresh click on fork
+login with your github 
+click on fork
+give repo name
+create fork
+---------------------------
+What is DevOps?
+DevOps is a methodology which Involves practices to bridge the gap of Dev and ops team by using Open source automation build tools.
+These are the articles which I refered to,
+formal defination   :   "DevOps is the union of people, process, and products to enable continuous delivery of value to our end users."
+The main goal of DEVOPS is to shorten cycle time. Start with the release pipeline. How long does it take to deploy a change of one line of code or configuration.
+---------------------------
+
+Q. difference between agile methodology and devops
+Ans : Agile is a philosophy about how to develop and deliver software, while DevOps describes how to continuously deploy code through the use of modern tools and automated processes.
+---------------------------
+
+What is Automation, Scaling, Infrastructure
+Automation:
+
+Definition: The use of technology and tools to perform tasks without manual intervention.
+Purpose: Streamlines and accelerates repetitive processes, reducing errors and increasing efficiency in software development and operations.
+Scaling:
+
+Definition: Adapting systems to handle increased workloads or demand seamlessly.
+Purpose: Ensures that applications and infrastructure can grow or shrink in response to varying levels of user activity, maintaining performance and responsiveness.
+Infrastructure:
+
+Definition: The underlying foundation of software systems, encompassing hardware, servers, networks, and other components.
+Purpose: Manages and supports the deployment and operation of software applications, providing a reliable and scalable environment for development and execution.
+---------------------------
+Why DevOps is Important
+DevOps is important for several reasons:
+
+Collaboration: Fosters collaboration between development and operations teams, breaking down silos and promoting a culture of shared responsibility.
+
+Efficiency: Automation and streamlined processes result in faster development cycles, quicker releases, and reduced time-to-market.
+
+Reliability: Enhances system stability and reliability through automated testing, continuous integration, and continuous delivery practices.
+
+Scalability: Facilitates seamless scaling of infrastructure and applications to meet changing demands, ensuring optimal performance under varying workloads.
+
+Quality: Continuous testing and integration improve code quality, reducing bugs and enhancing overall software reliability.
+
+Feedback Loop: Shortens feedback loops between development and operations, enabling quick response to issues and continuous improvement.
+
+Risk Mitigation: Identifies and addresses issues early in the development process, reducing the likelihood of critical errors in production.
+
+Customer Satisfaction: Faster delivery of features and improvements leads to higher customer satisfaction and a competitive edge in the market.
+---------------------------
+Write a LinkedIn post or a small article about your understanding of DevOps
+---------------------------

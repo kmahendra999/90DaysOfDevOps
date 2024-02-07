@@ -1,0 +1,145 @@
+You have to do the same using Shell Script i.e using either Loops or command with start day and end day variables using arguments -
+So Write a bash script createDirectories.sh that when the script is executed with three given arguments (one is directory name and second is start number of directories and third is the end number of directories ) it creates specified number of directories with a dynamic directory name.
+
+Example 1: When the script is executed as
+
+./createDirectories.sh day 1 90
+
+then it creates 90 directories as day1 day2 day3 .... day90
+
+
+
+#!/bin/bash
+
+# This script creates directories with dynamic names
+# based on the given arguments.
+
+# Check if three arguments are provided
+if [ "$#" -ne 3 ]; then
+    echo "Usage: $0 <directory_name> <start_number> <end_number>"
+    exit 1
+fi
+
+# Extract arguments
+directory_name=$1
+start_number=$2
+end_number=$3
+
+# Validate that start_number and end_number are positive integers
+if ! [[ "$start_number" =~ ^[0-9]+$ && "$end_number" =~ ^[0-9]+$ ]]; then
+    echo "Error: Start and end numbers must be positive integers."
+    exit 1
+fi
+
+# Create directories
+for (( i=$start_number; i<=$end_number; i++ )); do
+    dir_name="${directory_name}_${i}"
+    mkdir "$dir_name"
+    echo "Created directory: $dir_name"
+done
+
+echo "Directories created successfully."
+
+
+
+chmod +x createDirectories.sh
+
+./createDirectories.sh day 1 90
+
+
+
+
+
+
+
+
+
+2. Create a Script to backup all your work done till now.
+Backups are an important part of DevOps Engineers day to Day activities The video in References will help you to understand How a DevOps Engineer takes backups (it can feel a bit difficult but keep trying, Nothing is impossible.)
+
+#!/bin/bash
+
+# This script creates a backup of your work.
+
+# Set the source directory to be backed up
+source_directory="/path/to/your/work"
+
+# Set the backup directory
+backup_directory="/path/to/backup"
+
+# Create a timestamp for the backup filename
+timestamp=$(date +"%Y%m%d%H%M%S")
+
+# Set the backup filename
+backup_filename="backup_$timestamp.tar.gz"
+
+# Check if the source directory exists
+if [ ! -d "$source_directory" ]; then
+    echo "Error: Source directory does not exist. Please set the correct path."
+    exit 1
+fi
+
+# Create the backup
+tar -czf "$backup_directory/$backup_filename" -C "$(dirname "$source_directory")" "$(basename "$source_directory")"
+
+echo "Backup completed successfully. Backup saved to: $backup_directory/$backup_filename"
+
+
+
+chmod +x backup_work.sh
+
+./backup_work.sh
+
+
+
+
+
+
+3. Read About Cron and Crontab, to automate the backup Script
+Cron is the system's main scheduler for running jobs or tasks unattended. A command called crontab allows the user to submit, edit or delete entries to cron. A crontab file is a user file that holds the scheduling information.
+
+Cron:
+Cron is a time-based job scheduler in Unix-like operating systems. It allows users to schedule jobs (commands or shell scripts) to run automatically at specified intervals. These intervals can range from every minute to specific times, days, weeks, or months.
+
+Crontab:
+Crontab (short for "cron table") is a file used by the cron daemon to store the schedule of periodic jobs. Each user on a Unix system can have their own crontab file, and the cron daemon reads and executes the jobs defined in these files.
+
+Common Commands:
+crontab -l: Lists the user's current crontab entries.
+crontab -e: Opens the user's crontab file in the default text editor, allowing them to edit or add new entries.
+crontab -r: Removes the user's crontab file, canceling all scheduled jobs.
+Crontab Syntax:
+The crontab file uses a specific syntax to d
+
+* * * * * command_to_be_executed
+- - - - -
+| | | | |
+| | | | +----- Day of the week (0 - 6) (Sunday is both 0 and 7)
+| | | +------- Month (1 - 12)
+| | +--------- Day of the month (1 - 31)
+| +----------- Hour (0 - 23)
++------------- Minute (0 - 59)
+
+
+crontab -e
+
+0 2 * * * /path/to/your/backup_work.sh
+
+
+
+
+
+
+4. Read about User Management and Let me know on Linkedin if you're ready for Day 6.
+A user is an entity, in a Linux operating system, that can manipulate files and perform several other operations. Each user is assigned an ID that is unique for each user in the operating system. In this post, we will learn about users and commands which are used to get information about the users. After installation of the operating system, the ID 0 is assigned to the root user and the IDs 1 to 999 (both inclusive) are assigned to the system users and hence the ids for local user begins from 1000 onwards.
+
+
+
+
+
+
+
+
+5. Read about User Management and Let me know on Linkedin if you're ready for Day 6.
+A user is an entity, in a Linux operating system, that can manipulate files and perform several other operations. Each user is assigned an ID that is unique for each user in the operating system. In this post, we will learn about users and commands which are used to get information about the users. After installation of the operating system, the ID 0 is assigned to the root user and the IDs 1 to 999 (both inclusive) are assigned to the system users and hence the ids for local user begins from 1000 onwards.
+
