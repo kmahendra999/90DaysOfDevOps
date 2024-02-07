@@ -20,6 +20,24 @@ A freestyle project in Jenkins is a type of project that allows you to build, te
 
 # Task-01
 - create a agent for your app. ( which you deployed from docker in earlier task)
+  <pre>
+   Create A instance on aws for jenkins.
+   Create another instance on aws of docker.
+
+   on docker enable password authentication by edit /etc/ssh/sshd_config
+   and /etc/ssh/sshd_config.d/50-cloud-init.conf 
+   and make password authnticatoin yes
+
+   Now open jenkins >> configure it
+
+   dashboard >> manage jenkins >> nodes >> new node >> give name >> 
+   Number of executors = 2 ( ek bar me kitne build kar sakta he)
+   Launch method >> launch via ssh
+   Enter host
+   credintials >> add jenkins
+   username and password
+   and save
+  </pre>
 - Create a new Jenkins freestyle project for your app.
 - In the "Build" section of the project, add a build step to run the "docker build" command to build the image for the container.
 - Add a second step to run the "docker run" command to start a container using the image created in step 3.
