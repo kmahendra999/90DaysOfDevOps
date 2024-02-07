@@ -39,8 +39,14 @@ A freestyle project in Jenkins is a type of project that allows you to build, te
    and save
   </pre>
 - Create a new Jenkins freestyle project for your app.
+  <pre>
+   in jenkins go to dashboard >> New pipeline >>
+   give name and select freestyle project >> ok
+   in next page save. as no instruction for it in task.
+  </pre>
 - In the "Build" section of the project, add a build step to run the "docker build" command to build the image for the container.
 - Add a second step to run the "docker run" command to start a container using the image created in step 3.
+![image](https://github.com/kmahendra999/90DaysOfDevOps/assets/9668316/54ef4f0e-7699-4dcb-bf8b-ef3cefbca129)
 
 
 # Task-02
