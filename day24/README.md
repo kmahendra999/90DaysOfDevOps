@@ -10,7 +10,17 @@ Let's make a beautiful CI/CD Pipeline for your Node JS Application 😍
 # Task-01
 
 - Fork [this](https://github.com/LondheShubham153/node-todo-cicd.git) repository:
+
+  <pre>
+    fork the given as like you forked 90days of devops repo
+  </pre>
 - Create a connection to your Jenkins job and your GitHub Repository via GitHub Integration.
+  <pre>
+    Need to add webhook in the forked repo in our account.
+    go to repo >> setting or repo >> webhook >> jenkinsurl/github-webhook/
+    keep option application/json
+    save
+  </pre>
 - Read About [GitHub WebHooks](https://betterprogramming.pub/how-too-add-github-webhook-to-a-jenkins-pipeline-62b0be84e006) and make sure you have CICD setup
 - Refer [this](https://youtu.be/nplH3BzKHPk) video for the entire project
 
