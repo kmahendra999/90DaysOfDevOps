@@ -26,6 +26,46 @@ stages {
 - Use the above-given syntax using `sh` inside the stage block
 - You will face errors in case of running a job twice, as the docker container will be already created, so for that do task 2
 
+
+use below given script in pipeline script
+<pre>
+        pipeline {
+    agent any
+    stages {
+        stage('clearall') {
+            steps {
+                sh 'rm -rf *'
+            }
+        }
+		stage('gitclone') {
+            steps {
+                sh 'git clone https://github.com/kmahendra999/node-todo-cicd.git'
+                
+
+
+            }
+        }
+        stage('mvcommand') {
+            steps {
+                sh 'mv node-todo-cicd/* .'
+                
+            }
+        }
+		stage('dockerbuild') 
+		{
+            steps {
+                sh 'docker build . -t node-todo-image'
+            }
+        }
+		stage('Run') {
+            steps {
+                sh 'docker run -d -p 8000:8000 --name node-todo-name node-todo-image'
+            }
+        }
+    }
+}
+</pre>
+
 # Task-02
 
 - Create a docker-integrated Jenkins declarative pipeline using the `docker` groovy syntax inside the stage block.
