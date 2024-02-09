@@ -42,6 +42,18 @@ For installation, you can Visit [this page](https://minikube.sigs.k8s.io/docs/st
 
 If you want to try an alternative way, you can check [this](https://k8s-docs.netlify.app/en/docs/tasks/tools/install-minikube/).
 
+<pre>
+  
+  Minikube is a utility which required a hypervisor for example when we are installing minikube in windows it required enable hyper-v option.
+
+  then go to minikube.exe location and
+
+  run command minikube start.
+
+  then you can deploy something.
+  
+</pre>
+
 ## Let's understand the concept **pod**
 
 _Ans:-_
@@ -57,6 +69,14 @@ You can read more about pod from [here](https://kubernetes.io/docs/concepts/work
 ## Create your first pod on Kubernetes through minikube.
 
 We are suggesting you make an nginx pod, but you can always show your creativity and do it on your own.
+
+<pre>
+  after minikube succcessfull run 
+  
+  enter command
+  
+  kubectl create deploy mynewpod --image=nginx:latest
+</pre>
 
 **Having an issue? Don't worry, adding a sample yaml file for pod creation, you can always refer that.**
 
