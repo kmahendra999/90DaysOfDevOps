@@ -119,6 +119,17 @@ Deploy to Staging: Deploying the application to a staging environment for furthe
 User Acceptance Testing (UAT): Testing the application with a subset of users.
 Deploy to Production: Deploying the application to the production environment.
 Monitoring and Feedback: Monitoring the production environment and gathering feedback for continuous improvement.
+
+ 15. Name some of the plugins in Jenkins:
+
+Some popular Jenkins plugins include:
+Jenkins Git Plugin: Integrates Git with Jenkins.
+Jenkins Docker Plugin: Allows Jenkins to interact with Docker.
+Jenkins Pipeline Plugin: Adds pipeline support to Jenkins.
+Jenkins Credentials Plugin: Manages secrets and credentials.
+Jenkins Artifactory Plugin: Integrates Jenkins with Artifactory for artifact management.
+Jenkins SonarQube Plugin: Integrates Jenkins with SonarQube for code quality analysis.
+Jenkins Slack Plugin: Sends build notifications to Slack.
 </pre>
 
 These questions will help you in your next DevOps Interview.
