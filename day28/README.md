@@ -40,6 +40,32 @@ While creating an agent, be sure to separate rights, permissions, and ownership 
 
 - In case of any issues feel free to post on any Groups, [Discord](https://discord.gg/Q6ntmMtH) or [Telegram](https://t.me/trainwithshubham)
 
+<pre>
+ It is just defining the node. that where the agent will run.
+
+ For this we need to add node first.
+ 
+ ![image](https://github.com/kmahendra999/90DaysOfDevOps/assets/9668316/807d0973-1c8d-4c15-8b24-08752a6d6d4f)
+  
+ then when we are creating job, just select node 
+
+ ![image](https://github.com/kmahendra999/90DaysOfDevOps/assets/9668316/0ec587f7-a90b-4e90-b0b8-fe6fb621e8da)
+
+  or 
+
+  install : Node and Label parameter plugin
+
+ then 
+
+ when we are creating job
+
+ ![image](https://github.com/kmahendra999/90DaysOfDevOps/assets/9668316/af38989f-840d-41fe-9204-3c7a9e93fcc7)
+
+  then do other configs which are required for run the job and then run.
+ 
+</pre>
+
+
 Are you enjoying the #90DaysOfDevOps Challenge?
 
 Let me know how are feeling after 4 weeks of DevOps Learning.
