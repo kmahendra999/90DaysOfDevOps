@@ -76,6 +76,14 @@ We are suggesting you make an nginx pod, but you can always show your creativity
   enter command
   
   kubectl create deploy mynewpod --image=nginx:latest
+
+  or
+
+  download and keep yaml file in minikube folder.
+
+  then run kubectl create -f po.yml
+
+  **If you want to run command from anywhere add path in envirnment variables.
 </pre>
 
 **Having an issue? Don't worry, adding a sample yaml file for pod creation, you can always refer that.**
