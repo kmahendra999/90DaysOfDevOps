@@ -16,6 +16,8 @@ Originally developed at Google and released as open-source in 2014. Kubernetes b
 
 3. Explain the architecture of Kubernetes, refer to [this video](https://youtu.be/FqfoDUhzyDo)
 
+![1_HHRp0HENvfAu2hXT8Gto9g](https://github.com/kmahendra999/90DaysOfDevOps/assets/9668316/df6e97f1-26ae-43f1-90ac-befd8180e960)
+
 4. What is Control Plane?
 
 5. Write the difference between kubectl and kubelets.
@@ -45,7 +47,7 @@ Community Support: Active open-source community contributes to continuous improv
 
 The architecture of Kubernetes is based on a master-node model. The master node manages the cluster, while worker nodes host the running applications. Key components include the API server, etcd, Controller Manager, Scheduler, and Kubelet.
 
-  ![1_HHRp0HENvfAu2hXT8Gto9g](https://github.com/kmahendra999/90DaysOfDevOps/assets/9668316/df6e97f1-26ae-43f1-90ac-befd8180e960)
+  
 
 
 
