@@ -66,6 +66,12 @@ A freestyle project in Jenkins is a type of project that allows you to build, te
   </pre>
 - Set up a cleanup step in the Jenkins project to run "docker-compose down" command to stop and remove the containers defined in the compose file.
 
+  ![image](https://github.com/kmahendra999/90DaysOfDevOps/assets/9668316/10d95e80-ee0f-48c1-bf00-8c2ec9c9ba2f)
+
+  ![image](https://github.com/kmahendra999/90DaysOfDevOps/assets/9668316/dbcc91f0-504d-46db-9ac6-247c76b90e21)
+
+  save and then run
+
 For Refference jenkins Freestyle Project visit [here](https://youtu.be/wwNWgG5htxs)
 
 You can Post on LinkedIn and let us know what you have learned from this task by #90DaysOfDevOps Challange.
