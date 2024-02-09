@@ -52,6 +52,11 @@ pipeline {
 - Complete the example using the Declarative pipeline
 - In case of any issues feel free to post on any Groups, [Discord](https://discord.gg/Q6ntmMtH) or [Telegram](https://t.me/trainwithshubham)
 
+![image](https://github.com/kmahendra999/90DaysOfDevOps/assets/9668316/fc40a243-0113-4454-97f9-790c56fe2306)
+
+![image](https://github.com/kmahendra999/90DaysOfDevOps/assets/9668316/777c3730-4420-4c31-8162-b06ee502e727)
+
+
 You can post your progress on LinkedIn and let us know what you have learned from this task by #90DaysOfDevOps Challenge.
 
 Happy Learning:)
