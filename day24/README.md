@@ -30,9 +30,15 @@ Let's make a beautiful CI/CD Pipeline for your Node JS Application 😍
 - You will have to make a Docker Compose file for this Project (Can be a good open source contribution)
 - Run the project and give yourself a treat:)
 
+we done same in day23 for wordpress based websie, for nodejs based the notes are below.
+
+
 For Reference and entire hands-on Project visit [here](https://youtu.be/nplH3BzKHPk)
 
+
+
 You can Post on LinkedIn and let us know what you have learned from this task by #90DaysOfDevOps Challenge.
+
 
 Happy Learning:)
 
