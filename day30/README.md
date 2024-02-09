@@ -45,7 +45,8 @@ Community Support: Active open-source community contributes to continuous improv
 
 The architecture of Kubernetes is based on a master-node model. The master node manages the cluster, while worker nodes host the running applications. Key components include the API server, etcd, Controller Manager, Scheduler, and Kubelet.
 
-  ![1_HHRp0HENvfAu2hXT8Gto9g](https://github.com/kmahendra999/90DaysOfDevOps/assets/9668316/4b5d58e3-4053-4143-8498-0c4db8959972)
+  ![1_HHRp0HENvfAu2hXT8Gto9g](https://github.com/kmahendra999/90DaysOfDevOps/assets/9668316/df6e97f1-26ae-43f1-90ac-befd8180e960)
+
 
 
   4. What is Control Plane?
