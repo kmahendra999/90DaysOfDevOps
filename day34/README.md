@@ -14,7 +14,7 @@ In Kubernetes, Services are objects that provide stable network identities to Po
   
   kubectl apply -f Deployment.yml -n prod
 
-  kubectl expose deploy todo-app --type=NodePort --port=3000 --target-port=8008 --name=day34 --namespace=prod --dry-run=client -o yaml >> serviceexpose.yaml
+  kubectl expose deploy todo-app --type=NodePort --port=80 --target-port=8080 --name=day34 --namespace=prod --dry-run=client -o yaml >> serviceexpose.yml
   </pre>
 - Create a Service definition for your todo-app Deployment in a YAML file.
   
