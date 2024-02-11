@@ -73,3 +73,124 @@ Kubernetes architecture is important, so make sure you spend a day understanding
 _Happy Learning :)_
 
 [← Previous Day](../day29/README.md) | [Next Day →](../day31/README.md)
+
+
+<pre>
+  Install K8
+
+  on master and workers
+*****************************************
+Ip need to collect from aws portal so we can connect using short names
+=========================================
+with root
+=========================================
+sudo yum install -y vim-enhanced wget
+
+cat <<EOF | sudo tee /etc/hosts
+127.0.0.1   localhost localhost.localdomain localhost4 localhost4.localdomain4
+::1         localhost localhost.localdomain localhost6 localhost6.localdomain6
+3.82.187.188 master ip-172-31-83-234.ec2.internal
+3.85.159.54 worker1 ip-172-31-81-232.ec2.internal
+3.86.148.53 worker2 ip-172-31-81-226.ec2.internal
+EOF
+
+swapoff -a
+systemctl disable firewalld
+systemctl stop firewalld
+setenforce 0
+
+sed -i "s/^SELINUX=enforcing/SELINUX=disabled/" /etc/sysconfig/selinux
+
+useradd admin
+echo -e "redhat\nredhat" | passwd admin
+echo "admin ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers.d/admin
+
+sudo su admin
+
+=========================================
+with admin user
+=========================================
+cd ~
+
+echo 'PATH=$PATH:/usr/sbin:/sbin' >> ~/.bashrc
+source ~/.bashrc
+
+
+sudo yum remove docker \
+                  docker-client \
+                  docker-client-latest \
+                  docker-common \
+                  docker-latest \
+                  docker-latest-logrotate \
+                  docker-logrotate \
+                  docker-engine
+
+
+sudo yum install -y yum-utils
+sudo yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo
+
+sudo yum install -y docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
+
+sudo systemctl enable --now docker
+
+cat <<EOF | sudo tee /etc/yum.repos.d/kubernetes.repo
+[kubernetes]
+name=Kubernetes
+baseurl=https://pkgs.k8s.io/core:/stable:/v1.29/rpm/
+enabled=1
+gpgcheck=1
+gpgkey=https://pkgs.k8s.io/core:/stable:/v1.29/rpm/repodata/repomd.xml.key
+exclude=kubelet kubeadm kubectl cri-tools kubernetes-cni
+EOF
+
+sudo yum install -y kubelet kubeadm kubectl --disableexcludes=kubernetes
+sudo systemctl enable --now kubelet
+
+=========================================
+only on master
+=========================================
+
+sudo kubeadm init --pod-network-cidr=10.244.0.0/16 
+
+got error :
+---------------------------------
+WARNING Firewalkld]: firewalld is active, please ensure ports [6443 10250] are open or your cluster may not function correctly
+error execution phase preflight: [preflight] 
+
+Some fatal errors occurred: [ERROR CRI]: container runtime is not running Status from runtime service failed” err=”rpc error: code = Unimplemented desc = unknown service runtime.v1alpha2.RuntimeService”
+---------------------------------
+sudo rm /etc/containerd/config.toml
+sudo systemctl restart containerd
+
+sudo kubeadm init --pod-network-cidr=10.244.0.0/16 
+
+
+on successfull installetion :
+````````````````````````````````````````````````
+on master To start using your cluster, you need to run the following as a regular user:
+
+  mkdir -p $HOME/.kube
+  sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
+  sudo chown $(id -u):$(id -g) $HOME/.kube/config
+
+Alternatively, if you are the root user, you can run:
+
+  export KUBECONFIG=/etc/kubernetes/admin.conf
+
+You should now deploy a pod network to the cluster.
+Run "kubectl apply -f [podnetwork].yaml" with one of the options listed at:
+  https://kubernetes.io/docs/concepts/cluster-administration/addons/
+
+Then you can join any number of worker nodes by running the following on each as root:
+
+sudo kubeadm join 172.31.83.234:6443 --token bg6amc.41fohlpkftxs55mu --discovery-token-ca-cert-hash sha256:ef76427bfa3eebee90ca135e2f99a52363858336f603c5b6585e28fafbb0c9f2
+[admin@ip-172-31-83-234 ~]$
+````````````````````````````````````````````````
+
+=========================================
+only on worker
+=========================================
+sudo kubeadm join 172.31.83.234:6443 --token bg6amc.41fohlpkftxs55mu --discovery-token-ca-cert-hash sha256:ef76427bfa3eebee90ca135e2f99a52363858336f603c5b6585e28fafbb0c9f2
+
+
+</pre>
