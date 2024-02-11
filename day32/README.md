@@ -18,6 +18,9 @@ You describe a desired state in a Deployment, and the Deployment Controller chan
 - apply the deployment to your k8s (minikube) cluster by command
   `kubectl apply -f deployment.yml`
 
+![image](https://github.com/kmahendra999/90DaysOfDevOps/assets/9668316/b88a037c-5782-4fea-821c-1c7eb7b99d26)
+
+
 Let's make your resume shine with one more project ;)
 
 **Having an issue? Don't worry, adding a sample deployment file , you can always refer that or wathch [this video](https://youtu.be/ONrbWFJXLLk)**
