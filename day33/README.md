@@ -21,6 +21,9 @@ In Kubernetes, Namespaces are used to create isolated environments for resources
 
 - Verify that the Namespace has been created by checking the status of the Namespaces in your cluster.
 
+![image](https://github.com/kmahendra999/90DaysOfDevOps/assets/9668316/7ee89055-d483-4020-a8f6-3ef2644dea65)
+
+
 ## Task 2:
 
 - Read about Services, Load Balancing, and Networking in Kubernetes. Refer official documentation of kubernetes [Link](https://kubernetes.io/docs/concepts/services-networking/)
