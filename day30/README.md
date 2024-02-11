@@ -133,7 +133,8 @@ sudo yum install -y docker-ce docker-ce-cli containerd.io docker-buildx-plugin d
 
 sudo systemctl enable --now docker
 
-cat <<EOF "| sudo tee" /etc/yum.repos.d/kubernetes.repo
+  <code>
+cat << EOF | sudo tee /etc/yum.repos.d/kubernetes.repo
 [kubernetes]
 name=Kubernetes
 baseurl=https://pkgs.k8s.io/core:/stable:/v1.29/rpm/
@@ -142,7 +143,7 @@ gpgcheck=1
 gpgkey=https://pkgs.k8s.io/core:/stable:/v1.29/rpm/repodata/repomd.xml.key
 exclude=kubelet kubeadm kubectl cri-tools kubernetes-cni
 EOF
-
+</code>
 sudo yum install -y kubelet kubeadm kubectl --disableexcludes=kubernetes
 sudo systemctl enable --now kubelet
 
