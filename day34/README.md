@@ -9,8 +9,17 @@ In Kubernetes, Services are objects that provide stable network identities to Po
 ## Task-1:
 
 - Create a Service for your todo-app Deployment from Day-32
+
+  kubectl apply -f Deployment.yml
+
+  kubectl expose deploy todo-app --type=NodePort --port=3000 --target-port=8008 --name=day34 --namespace=prod --dry-run=client -o yaml >> serviceexpose.yaml
+  
 - Create a Service definition for your todo-app Deployment in a YAML file.
+  
 - Apply the Service definition to your K8s (minikube) cluster using the `kubectl apply -f service.yml -n <namespace-name>` command.
+
+  kubetl apply -f serviceexpose.yaml
+  
 - Verify that the Service is working by accessing the todo-app using the Service's IP and Port in your Namespace.
 
 ## Task-2:
