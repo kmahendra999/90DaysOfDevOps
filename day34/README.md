@@ -31,6 +31,9 @@ In Kubernetes, Services are objects that provide stable network identities to Po
 - Apply the ClusterIP Service definition to your K8s (minikube) cluster using the `kubectl apply -f cluster-ip-service.yml -n <namespace-name>` command.
 - Verify that the ClusterIP Service is working by accessing the todo-app from another Pod in the cluster in your Namespace.
 
+![image](https://github.com/kmahendra999/90DaysOfDevOps/assets/9668316/797f36c5-4a71-464a-be1a-5c7239d0d6bd)
+
+
 ## Task-3:
 
 - Create a LoadBalancer Service for accessing the todo-app from outside the cluster
