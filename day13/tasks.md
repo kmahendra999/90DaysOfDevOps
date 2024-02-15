@@ -27,7 +27,7 @@ Task1:
    <pre>
       different data types in Python.
 
-**Integers (int):**
+Integers (int):
 These are whole numbers without any decimal point.
 Examples: 5, -10, 100
 
