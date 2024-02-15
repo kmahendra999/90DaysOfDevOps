@@ -134,7 +134,7 @@ Feel free to experiment with adding, removing, or modifying elements in each dat
 
 
    
-2. Create below Dictionary and use Dictionary methods to print your favourite tool just by using the keys of the Dictionary.
+1. Create below Dictionary and use Dictionary methods to print your favourite tool just by using the keys of the Dictionary.
 ```
 fav_tools = 
 { 
@@ -151,7 +151,7 @@ fav_tools =
 
 
 
-3. Create a List of cloud service providers
+2. Create a List of cloud service providers
 eg.
 ```
 cloud_providers = ["AWS","GCP","Azure"]
@@ -161,6 +161,8 @@ cloud_providers = ["AWS","GCP","Azure"]
 Write a program to add `Digital Ocean` to the list of cloud_providers and sort the list in alphabetical order.
 
 ![image](https://github.com/kmahendra999/90DaysOfDevOps/assets/9668316/9eb6ad0e-14bd-4f54-a850-1e89a4ee674b)
+
+![image](https://github.com/kmahendra999/90DaysOfDevOps/assets/9668316/019432f6-ed87-40ea-bdfe-0d39e51a67f6)
 
 
 [Hint: Use keys to built in functions for Lists]
