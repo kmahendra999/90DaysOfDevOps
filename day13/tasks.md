@@ -26,8 +26,9 @@ Task1:
 3. Read about different Data Types in Python.
    <pre>
       different data types in Python.
+<code>
 
-Integers (int):
+   **Integers (int):**
 These are whole numbers without any decimal point.
 Examples: 5, -10, 100
 
@@ -58,6 +59,7 @@ Examples: {'name': 'John', 'age': 25}
 **Sets:**
 An unordered collection of unique items.
 Examples: {1, 2, 3}, {'apple', 'orange', 'banana'}****
+</code>
    </pre>
 
 
