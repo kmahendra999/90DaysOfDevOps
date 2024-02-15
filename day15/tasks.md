@@ -33,5 +33,8 @@ gcp : compute engine
 ![image](https://github.com/kmahendra999/90DaysOfDevOps/assets/9668316/9a4b9fde-afc6-4ca3-9149-eee430c00eac)
 
 
+![image](https://github.com/kmahendra999/90DaysOfDevOps/assets/9668316/b4f8c210-1894-4bab-ab68-91c399152921)
+
+
 Python Project for your practice:
 https://youtube.com/playlist?list=PLlfy9GnSVerSzFmQ8JqP9v0XHHOAeWbjo
