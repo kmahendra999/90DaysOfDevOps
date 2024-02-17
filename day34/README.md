@@ -41,9 +41,10 @@ In Kubernetes, Services are objects that provide stable network identities to Po
 - Apply the LoadBalancer Service definition to your K8s (minikube) cluster using the `kubectl apply -f load-balancer-service.yml -n <namespace-name>` command.
 - Verify that the LoadBalancer Service is working by accessing the todo-app from outside the cluster in your Namespace.
 
+<code>
 root@instance:~# kubectl expose deploy todo-app --type=LoadBalancer --port=80 --target-port=80 --name=day34lb --namespace=prod --dry-run=client -o yaml >> serviceexpLB.yaml
 root@instance:~# kubectl apply -f serviceexpLB.yaml 
-
+</code>
 
 ![image](https://github.com/kmahendra999/90DaysOfDevOps/assets/9668316/63c12b31-9a7e-4999-950e-4447db47efc2)
 
