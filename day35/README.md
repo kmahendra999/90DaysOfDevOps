@@ -78,6 +78,59 @@ env command in the pod.
 - Create a Secret for your Deployment using a file or the command line
 - Update the deployment.yml file to include the Secret
 - Apply the updated deployment using the command: `kubectl apply -f deployment.yml -n <namespace-name>`
+<code>
+root@instance:~/0903# cat secret.yml 
+apiVersion: v1
+kind: Secret
+metadata:
+  name: todo-secret
+  namespace: dev
+type: Opaque
+data:
+  password: cmVkaGFy
+root@instance:~/0903# cat deployment.yml 
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: todo-app
+  namespace: dev
+  labels:
+    app: todo
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: todo
+  template:
+    metadata:
+      labels:
+        app: todo
+    spec:
+      containers:
+        - name: todo
+          image: piyushsachdeva/todo-app:build-8
+          ports:
+            - containerPort: 3000
+          env:
+            - name: PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: todo-secret
+                  key: password
+
+
+kubectl create ns dev
+kubectl apply -f secret.yml -n dev
+kubectl get secret -n dev
+kubectl apply -f deployment.yml -n dev
+kubectl get deploy -n dev
+kubectl exec -it todo-app-d6848bf48-f7zhb -n dev -- sh
+inside the pod
+hit command echo $PASSWORD
+
+
+
+</code>
 - Verify that the Secret has been created by checking the status of the Secrets in your Namespace.
 
 Need help with ConfigMaps and Secrets? Check out this [video](https://youtu.be/FAnQTgr04mU) for assistance.
