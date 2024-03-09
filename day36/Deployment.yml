@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: todo-app
-          image: rishikeshops/todo-app
+          image: piyushsachdeva/todo-app:build-8
           ports:
             - containerPort: 8000
           volumeMounts:
