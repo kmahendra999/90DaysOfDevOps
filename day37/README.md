@@ -2,6 +2,10 @@
 
 ## Questions
 
+Hit the link if you are preparing for interview
+
+https://github.com/kmahendra999/DevOpsInterviewQuestions/blob/main/Most%2095%25%20Interview%20question%20for%20devops.docx
+
 1.What is Kubernetes and why it is important?
 
 2.What is difference between docker swarm and kubernetes?
