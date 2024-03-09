@@ -23,7 +23,9 @@ In Kubernetes, ConfigMaps and Secrets are used to store configuration data and s
 - Verify that the ConfigMap has been created by checking the status of the ConfigMaps in your Namespace.
 
 <code>
-root@instance:~/0903# cat *
+root@instance:~/0903# ls
+configmap.yml  deployment.yml
+root@instance:~/0903# cat configmap.yml 
 apiVersion: v1
 kind: ConfigMap
 metadata:
@@ -32,8 +34,7 @@ metadata:
 data:
   APP_NAME: "Todo App"
   ENVIRONMENT: "Development"
-
-  
+root@instance:~/0903# cat deployment.yml 
 apiVersion: apps/v1
 kind: Deployment
 metadata:
